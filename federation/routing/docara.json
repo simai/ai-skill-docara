@@ -10,11 +10,10 @@
       "docs"
     ],
     "evidence_refs": [
-      "graph/generated/mirai-graph/gga10-owner-approved-apply-plans/docara-owner-approved-apply-plan-20260530/owner-approved-apply-plan.json",
-      "graph/generated/mirai-graph/gga10-apply-verdicts/docara-owner-approved-gga10-apply-validated-20260530/apply-verdict.json"
+      "repo://ai-codex-skill-docara/skills/docara/quality/capability-map.json"
     ],
     "gga_status": "GGA10",
-    "graph_context_ref": "/Users/rim/Documents/GitHub/ai-codex-skill-docara/graph",
+    "graph_context_ref": "repo://ai-codex-skill-docara/graph",
     "keywords": [
       "docara",
       "документационный сайт",
