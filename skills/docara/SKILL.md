@@ -32,6 +32,9 @@ context --task "..."` operations for verification and task-scoped context.
 The exact Mirai Graph release is supplied by the Federation release lock; raw
 Docara sources remain authoritative and unavailable context fails closed.
 
+Executable technology: [documentation-site-lifecycle.json](./technologies/documentation-site-lifecycle.json)
+(scenarios: project change, engine upgrade, static publication).
+
 ## Start every task
 
 1. Locate the project root containing `docara.json`.

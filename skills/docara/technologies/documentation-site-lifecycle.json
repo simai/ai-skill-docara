@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "id": "technology.docara.documentation-site-lifecycle",
+  "title": "Изменение, обновление и публикация сайта документации Docara",
+  "owner": "skill.docara",
+  "outcome": "Проект Docara получил минимальное полное изменение в собственных источниках (контент, настройки, компоненты, движок), собран, прошёл verify-static и HTTP-проверку затронутых маршрутов; публикация, если запрошена, выполнена отдельным шагом с $ops, бэкапом и откатом.",
+  "lifecycle": "reviewed",
+  "version": "1.0.0",
+  "source_refs": [
+    "repo://ai-codex-skill-docara/skills/docara/SKILL.md",
+    "repo://ai-codex-skill-docara/skills/docara/references/architecture-and-project-model.md",
+    "repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md",
+    "repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md",
+    "repo://ai-codex-skill-docara/skills/docara/rules/skill-mesh-balance.md"
+  ],
+  "scenarios": [
+    {
+      "id": "scenario.project_change",
+      "title": "Изменение проекта документации",
+      "outcome": "Контент, навигация, настройки или компоненты изменены, сайт собран и проверен локально без публикации.",
+      "operation_ids": ["operation.project_intake", "operation.capability_handshake", "operation.source_change", "operation.build", "operation.static_verification", "operation.http_acceptance", "operation.handoff"],
+      "required_inputs": ["input.user_outcome", "input.project_root"]
+    },
+    {
+      "id": "scenario.engine_upgrade",
+      "title": "Обновление движка Docara",
+      "outcome": "Пакет и движок обновлены транзакционным upgrade (или явной адаптацией pre-manifest проекта), полная сборка и verify-static пройдены, путь отката подтверждён.",
+      "operation_ids": ["operation.project_intake", "operation.capability_handshake", "operation.engine_upgrade", "operation.build", "operation.static_verification", "operation.http_acceptance", "operation.handoff"],
+      "required_inputs": ["input.project_root", "input.target_package_version"]
+    },
+    {
+      "id": "scenario.static_publication",
+      "title": "Изменение с публикацией на статический хостинг",
+      "outcome": "Проверенные байты сборки опубликованы атомарно через $ops с бэкапом и откатом; состояния сборки, проверки и публикации отчётны раздельно.",
+      "operation_ids": ["operation.project_intake", "operation.capability_handshake", "operation.source_change", "operation.build", "operation.static_verification", "operation.http_acceptance", "operation.static_publication", "operation.handoff"],
+      "required_inputs": ["input.user_outcome", "input.project_root", "input.live_authorization"]
+    }
+  ],
+  "operations": [
+    {
+      "id": "operation.project_intake",
+      "title": "Найти проект и зафиксировать результат",
+      "summary": "Найти корень с docara.json, проверить git status и сохранить чужую работу, прочитать docara.json, корни локалей, ближайший section.json, sidecar страницы и Framework lock; свести запрос к одному основному результату и минимальному полному изменению.",
+      "owner": "skill.docara",
+      "prerequisites": [],
+      "input_refs": ["input.user_outcome", "input.project_root"],
+      "output_refs": ["evidence.project_scope", "evidence.authoritative_inputs"],
+      "check_refs": ["check.docara_json_found", "check.unrelated_work_preserved"],
+      "stop_condition_refs": ["stop.no_docara_project", "stop.target_not_empty_for_init"],
+      "rollback_refs": [],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/SKILL.md", "repo://ai-codex-skill-docara/skills/docara/references/architecture-and-project-model.md"]
+    },
+    {
+      "id": "operation.capability_handshake",
+      "title": "Прочитать контракт установленного пакета",
+      "summary": "Найти исполняемый файл проекта (vendor/bin/docara или точный checkout пакета), выполнить capabilities --json или документированный legacy-путь и сверить команды, схемы и типы с точной установленной версией.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.project_intake"],
+      "input_refs": ["evidence.project_scope"],
+      "output_refs": ["evidence.package_capability_contract"],
+      "check_refs": ["check.project_local_executable", "check.no_latest_surface_assumption"],
+      "stop_condition_refs": ["stop.skill_product_drift_unresolved"],
+      "rollback_refs": [],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md", "repo://ai-codex-skill-docara/skills/docara/references/developer-sdk-and-qa.md"]
+    },
+    {
+      "id": "operation.source_change",
+      "title": "Изменить собственные источники проекта",
+      "summary": "Проверить ID и поля по схеме, реестру или inspect и изменить только источники проекта: Markdown, front matter, docara.json, section.json, sidecar, lang.json, redirects.json, assets, examples, smart/ или design/; никогда не править build_*, .docara или пакетный движок.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.capability_handshake"],
+      "input_refs": ["evidence.authoritative_inputs", "evidence.package_capability_contract"],
+      "output_refs": ["evidence.changed_source_owners"],
+      "check_refs": ["check.schema_validated_before_edit", "check.no_generated_state_edited", "check.component_contract_admitted"],
+      "stop_condition_refs": ["stop.unsafe_config_payload", "stop.framework_lock_moving_ref"],
+      "rollback_refs": ["procedure.git_revert_source_change"],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/content-locales-and-navigation.md", "repo://ai-codex-skill-docara/skills/docara/references/settings-and-inheritance.md", "repo://ai-codex-skill-docara/skills/docara/references/components-smart-and-design.md"]
+    },
+    {
+      "id": "operation.engine_upgrade",
+      "title": "Обновить пакет и движок транзакционно",
+      "summary": "Выполнить upgrade --check, --dry-run и --apply по точному плану; для pre-manifest проекта сначала явная адаптация update --dry-run --adopt, --apply, --verify. Никогда не использовать init --update.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.capability_handshake"],
+      "input_refs": ["input.target_package_version", "evidence.package_capability_contract"],
+      "output_refs": ["evidence.upgrade_plan", "evidence.upgrade_result"],
+      "check_refs": ["check.exact_stable_version", "check.plan_not_stale", "check.rollback_available_locally"],
+      "stop_condition_refs": ["stop.major_change_or_downgrade", "stop.engine_adoption_required"],
+      "rollback_refs": ["procedure.upgrade_rollback"],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md"]
+    },
+    {
+      "id": "operation.build",
+      "title": "Собрать сайт",
+      "summary": "Выбрать сборку: одна страница только для существующего маршрута после принятой полной сборки без изменения общего состояния; иначе полная production-сборка.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.capability_handshake"],
+      "input_refs": ["evidence.changed_source_owners", "evidence.upgrade_result"],
+      "output_refs": ["evidence.build_output"],
+      "check_refs": ["check.build_mode_justified", "check.cheapest_relevant_check_first"],
+      "stop_condition_refs": ["stop.build_failed"],
+      "rollback_refs": [],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md"]
+    },
+    {
+      "id": "operation.static_verification",
+      "title": "Проверить статический вывод",
+      "summary": "Запустить verify-static на точном каталоге сборки; не ослаблять проверки обхода путей, ссылок, хешей и владения, чтобы сборка прошла.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.build"],
+      "input_refs": ["evidence.build_output"],
+      "output_refs": ["evidence.static_verification"],
+      "check_refs": ["check.verify_static_passed", "check.no_secrets_in_output"],
+      "stop_condition_refs": ["stop.static_verification_failed"],
+      "rollback_refs": [],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md", "repo://ai-codex-skill-docara/skills/docara/references/security-and-troubleshooting.md"]
+    },
+    {
+      "id": "operation.http_acceptance",
+      "title": "Проверить проверенные байты по HTTP",
+      "summary": "Для видимых изменений отдать проверенную сборку через serve --no-build и проверить затронутые маршруты, навигацию, поиск, темы, адаптивность и клавиатуру; иначе записать, почему проверка не нужна.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.static_verification"],
+      "input_refs": ["evidence.static_verification"],
+      "output_refs": ["evidence.browser_qa"],
+      "check_refs": ["check.served_bytes_are_verified_build", "check.affected_routes_covered"],
+      "stop_condition_refs": ["stop.visible_regression"],
+      "rollback_refs": [],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md", "repo://ai-codex-skill-docara/skills/docara/references/developer-sdk-and-qa.md"]
+    },
+    {
+      "id": "operation.static_publication",
+      "title": "Опубликовать статический сайт",
+      "summary": "Собрать с правильным base_url, скопировать только проверенные байты в версионированный staging, сверить дайджесты, проверить маршруты, ассеты, поиск и темы, затем атомарно переключить трафик через $ops с бэкапом, откатом и явным разрешением на live.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.http_acceptance"],
+      "input_refs": ["evidence.browser_qa", "input.live_authorization"],
+      "output_refs": ["evidence.publication_record"],
+      "check_refs": ["check.ops_gate_passed", "check.staging_digest_matches", "check.backup_before_switch"],
+      "stop_condition_refs": ["stop.live_without_authorization"],
+      "rollback_refs": ["procedure.switch_back_previous_release"],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md", "repo://ai-codex-skill-docara/skills/docara/rules/skill-mesh-balance.md"]
+    },
+    {
+      "id": "operation.handoff",
+      "title": "Отчитаться о результате",
+      "summary": "Вернуть корень проекта и ревизию пакета, изменённых владельцев источников и область, выполненные команды, путь сборки и результат verify-static, покрытие QA и отдельно состояния релиза и публикации со следующим безопасным шагом.",
+      "owner": "skill.docara",
+      "prerequisites": ["operation.http_acceptance"],
+      "input_refs": ["evidence.changed_source_owners", "evidence.static_verification", "evidence.browser_qa"],
+      "output_refs": ["evidence.result_report"],
+      "check_refs": ["check.states_reported_separately", "check.no_unproven_release_claim"],
+      "stop_condition_refs": [],
+      "rollback_refs": [],
+      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/SKILL.md"]
+    }
+  ]
+}

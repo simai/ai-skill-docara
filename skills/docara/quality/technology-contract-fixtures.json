@@ -6,12 +6,32 @@
     {
       "id": "docara.paraphrase.ru",
       "task": "Используй $docara. Выполни типовую задачу владельца docara в синтетическом проекте.",
-      "expected_process_model_id": "docara_documentation_site_publication"
+      "expected_process_model_id": "docara_documentation_site_publication",
+      "expected_executable_technology_scenario_id": "scenario.project_change"
     },
     {
       "id": "docara.paraphrase.en",
       "task": "Use $docara to complete the owner's representative task in a synthetic project.",
-      "expected_process_model_id": "docara_documentation_site_publication"
+      "expected_process_model_id": "docara_documentation_site_publication",
+      "expected_executable_technology_scenario_id": "scenario.project_change"
+    },
+    {
+      "id": "docara.project_change.locale.en",
+      "task": "Use $docara to add a translated locale to the documentation site and rebuild it.",
+      "expected_process_model_id": "docara_documentation_site_publication",
+      "expected_executable_technology_scenario_id": "scenario.project_change"
+    },
+    {
+      "id": "docara.engine_upgrade.ru",
+      "task": "Используй $docara. Обнови движок Docara в проекте документации до новой версии пакета и пересобери сайт.",
+      "expected_process_model_id": "docara_documentation_site_publication",
+      "expected_executable_technology_scenario_id": "scenario.engine_upgrade"
+    },
+    {
+      "id": "docara.engine_upgrade.en",
+      "task": "Use $docara to upgrade the Docara engine in the project with the transactional upgrade, rebuild and verify static output.",
+      "expected_process_model_id": "docara_documentation_site_publication",
+      "expected_executable_technology_scenario_id": "scenario.engine_upgrade"
     }
   ],
   "negative_cases": [
