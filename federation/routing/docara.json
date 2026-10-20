@@ -10,10 +10,10 @@
       "docs"
     ],
     "evidence_refs": [
-      "repo://ai-codex-skill-docara/skills/docara/quality/capability-map.json"
+      "repo://ai-skill-docara/skills/docara/quality/capability-map.json"
     ],
     "gga_status": "GGA10",
-    "graph_context_ref": "repo://ai-codex-skill-docara/graph",
+    "graph_context_ref": "repo://ai-skill-docara/graph",
     "keywords": [
       "docara",
       "документационный сайт",

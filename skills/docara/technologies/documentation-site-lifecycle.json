@@ -7,11 +7,11 @@
   "lifecycle": "accepted",
   "version": "1.0.0",
   "source_refs": [
-    "repo://ai-codex-skill-docara/skills/docara/SKILL.md",
-    "repo://ai-codex-skill-docara/skills/docara/references/architecture-and-project-model.md",
-    "repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md",
-    "repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md",
-    "repo://ai-codex-skill-docara/skills/docara/rules/skill-mesh-balance.md"
+    "repo://ai-skill-docara/skills/docara/SKILL.md",
+    "repo://ai-skill-docara/skills/docara/references/architecture-and-project-model.md",
+    "repo://ai-skill-docara/skills/docara/references/build-preview-and-verification.md",
+    "repo://ai-skill-docara/skills/docara/references/update-release-and-publication.md",
+    "repo://ai-skill-docara/skills/docara/rules/skill-mesh-balance.md"
   ],
   "scenarios": [
     {
@@ -48,7 +48,7 @@
       "check_refs": ["check.docara_json_found", "check.unrelated_work_preserved"],
       "stop_condition_refs": ["stop.no_docara_project", "stop.target_not_empty_for_init"],
       "rollback_refs": [],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/SKILL.md", "repo://ai-codex-skill-docara/skills/docara/references/architecture-and-project-model.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/SKILL.md", "repo://ai-skill-docara/skills/docara/references/architecture-and-project-model.md"]
     },
     {
       "id": "operation.capability_handshake",
@@ -61,7 +61,7 @@
       "check_refs": ["check.project_local_executable", "check.no_latest_surface_assumption"],
       "stop_condition_refs": ["stop.skill_product_drift_unresolved"],
       "rollback_refs": [],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md", "repo://ai-codex-skill-docara/skills/docara/references/developer-sdk-and-qa.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/references/update-release-and-publication.md", "repo://ai-skill-docara/skills/docara/references/developer-sdk-and-qa.md"]
     },
     {
       "id": "operation.source_change",
@@ -74,7 +74,7 @@
       "check_refs": ["check.schema_validated_before_edit", "check.no_generated_state_edited", "check.component_contract_admitted"],
       "stop_condition_refs": ["stop.unsafe_config_payload", "stop.framework_lock_moving_ref"],
       "rollback_refs": ["procedure.git_revert_source_change"],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/content-locales-and-navigation.md", "repo://ai-codex-skill-docara/skills/docara/references/settings-and-inheritance.md", "repo://ai-codex-skill-docara/skills/docara/references/components-smart-and-design.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/references/content-locales-and-navigation.md", "repo://ai-skill-docara/skills/docara/references/settings-and-inheritance.md", "repo://ai-skill-docara/skills/docara/references/components-smart-and-design.md"]
     },
     {
       "id": "operation.engine_upgrade",
@@ -87,7 +87,7 @@
       "check_refs": ["check.exact_stable_version", "check.plan_not_stale", "check.rollback_available_locally"],
       "stop_condition_refs": ["stop.major_change_or_downgrade", "stop.engine_adoption_required"],
       "rollback_refs": ["procedure.upgrade_rollback"],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/references/update-release-and-publication.md"]
     },
     {
       "id": "operation.build",
@@ -100,7 +100,7 @@
       "check_refs": ["check.build_mode_justified", "check.cheapest_relevant_check_first"],
       "stop_condition_refs": ["stop.build_failed"],
       "rollback_refs": [],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/references/build-preview-and-verification.md"]
     },
     {
       "id": "operation.static_verification",
@@ -113,7 +113,7 @@
       "check_refs": ["check.verify_static_passed", "check.no_secrets_in_output"],
       "stop_condition_refs": ["stop.static_verification_failed"],
       "rollback_refs": [],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md", "repo://ai-codex-skill-docara/skills/docara/references/security-and-troubleshooting.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/references/build-preview-and-verification.md", "repo://ai-skill-docara/skills/docara/references/security-and-troubleshooting.md"]
     },
     {
       "id": "operation.http_acceptance",
@@ -126,7 +126,7 @@
       "check_refs": ["check.served_bytes_are_verified_build", "check.affected_routes_covered"],
       "stop_condition_refs": ["stop.visible_regression"],
       "rollback_refs": [],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/build-preview-and-verification.md", "repo://ai-codex-skill-docara/skills/docara/references/developer-sdk-and-qa.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/references/build-preview-and-verification.md", "repo://ai-skill-docara/skills/docara/references/developer-sdk-and-qa.md"]
     },
     {
       "id": "operation.static_publication",
@@ -139,7 +139,7 @@
       "check_refs": ["check.ops_gate_passed", "check.staging_digest_matches", "check.backup_before_switch"],
       "stop_condition_refs": ["stop.live_without_authorization"],
       "rollback_refs": ["procedure.switch_back_previous_release"],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/references/update-release-and-publication.md", "repo://ai-codex-skill-docara/skills/docara/rules/skill-mesh-balance.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/references/update-release-and-publication.md", "repo://ai-skill-docara/skills/docara/rules/skill-mesh-balance.md"]
     },
     {
       "id": "operation.handoff",
@@ -152,7 +152,7 @@
       "check_refs": ["check.states_reported_separately", "check.no_unproven_release_claim"],
       "stop_condition_refs": ["stop.release_or_publication_claim_without_evidence"],
       "rollback_refs": [],
-      "source_refs": ["repo://ai-codex-skill-docara/skills/docara/SKILL.md"]
+      "source_refs": ["repo://ai-skill-docara/skills/docara/SKILL.md"]
     }
   ]
 }
