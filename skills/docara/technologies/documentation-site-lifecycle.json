@@ -4,7 +4,7 @@
   "title": "Изменение, обновление и публикация сайта документации Docara",
   "owner": "skill.docara",
   "outcome": "Проект Docara получил минимальное полное изменение в собственных источниках (контент, настройки, компоненты, движок), собран, прошёл verify-static и HTTP-проверку затронутых маршрутов; публикация, если запрошена, выполнена отдельным шагом с $ops, бэкапом и откатом.",
-  "lifecycle": "reviewed",
+  "lifecycle": "accepted",
   "version": "1.0.0",
   "source_refs": [
     "repo://ai-codex-skill-docara/skills/docara/SKILL.md",
@@ -150,7 +150,7 @@
       "input_refs": ["evidence.changed_source_owners", "evidence.static_verification", "evidence.browser_qa"],
       "output_refs": ["evidence.result_report"],
       "check_refs": ["check.states_reported_separately", "check.no_unproven_release_claim"],
-      "stop_condition_refs": [],
+      "stop_condition_refs": ["stop.release_or_publication_claim_without_evidence"],
       "rollback_refs": [],
       "source_refs": ["repo://ai-codex-skill-docara/skills/docara/SKILL.md"]
     }

@@ -32,6 +32,12 @@
       "task": "Use $docara to upgrade the Docara engine in the project with the transactional upgrade, rebuild and verify static output.",
       "expected_process_model_id": "docara_documentation_site_publication",
       "expected_executable_technology_scenario_id": "scenario.engine_upgrade"
+    },
+    {
+      "id": "docara.static_publication.ru",
+      "task": "Используй $docara. Внеси правку в документацию, пересобери сайт и опубликуй его на статический хостинг через $ops с бэкапом и откатом.",
+      "expected_process_model_id": "docara_documentation_site_publication",
+      "expected_executable_technology_scenario_id": "scenario.static_publication"
     }
   ],
   "negative_cases": [
