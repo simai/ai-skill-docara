@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.evidence",
+  "created_at": "2026-10-21T22:51:35.289394+00:00",
+  "skill": "docara",
+  "repo": "repo://ai-skill-docara",
+  "base": "0b0ba33003845e76cb4ac9696165f671ce06cc84",
+  "base_commit": "0b0ba33003845e76cb4ac9696165f671ce06cc84",
+  "comparison_mode": "baseline_to_worktree",
+  "detector_fingerprint": "8a9ec2d079ec6abfd1ee755b01ba84373b42fcd22e3e72c930aca950e0f2fbef",
+  "detector_report_ref": "graph/generated/mirai-graph/skill-source-changes/skill-graph-sync-docara-20261021225134/detector-report.json",
+  "changed_files": [
+    {
+      "path": "README.md",
+      "source_path": "README.md",
+      "change_types": [
+        "documentation",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "fb9f4a52d0711e352b9f4ad3f1acfec1edf2ae2d9e9d6f4779f5a5a3738906f2",
+      "source_bytes": 1934,
+      "baseline_path": "README.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "9c8643c674544ce640270a0508725d3b6d40e620462847f5f3f7576685298418",
+      "baseline_bytes": 1922
+    },
+    {
+      "path": "scripts/validate_skill_contract.py",
+      "source_path": "scripts/validate_skill_contract.py",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "74c68a35a9b9e5dfb6784c0f5b95706e35365998e28c760b2e8dc3d12aed7e2a",
+      "source_bytes": 9461,
+      "baseline_path": "scripts/validate_skill_contract.py",
+      "baseline_mode": "100644",
+      "baseline_sha256": "7625bfe663c8c695ef231d41e61912b318d16eaca8f2051a2cb77f58f909e67e",
+      "baseline_bytes": 9449
+    },
+    {
+      "path": "skills/docara/repository-recipes/technology-overlay/recipe.json",
+      "source_path": "repository-recipes/technology-overlay/recipe.json",
+      "change_types": [
+        "federation-impact",
+        "methodology",
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "c114159b84f1dcb15310bb8adab69d033a86c5c399f255c83e8f7b8bacc594a3",
+      "source_bytes": 1472,
+      "baseline_path": "skills/docara/repository-recipes/technology-overlay/recipe.json",
+      "baseline_mode": "100644",
+      "baseline_sha256": "3428a9ea83a7434218a7afb2991deef0ec90a32ff18840902772819ceeba8d4f",
+      "baseline_bytes": 1460
+    }
+  ],
+  "change_types": [
+    "documentation",
+    "federation-impact",
+    "methodology",
+    "routing-impact",
+    "runtime"
+  ],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "detected_specialists": [],
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "evidence_refs": [
+    "README.md",
+    "scripts/validate_skill_contract.py",
+    "skills/docara/repository-recipes/technology-overlay/recipe.json"
+  ],
+  "canonical_write_allowed": false
+}
