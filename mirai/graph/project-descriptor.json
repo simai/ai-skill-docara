@@ -1,0 +1,124 @@
+{
+  "$schema": "https://mirai-graph.dev/schemas/graph-manifest.schema.json",
+  "aliases": [],
+  "evolution": {
+    "current_iteration": 2,
+    "migration_status": "current"
+  },
+  "extensions": {
+    "mirai.project_technology": {
+      "context_policy": "task_scoped",
+      "continuity_policy": "task_boundary",
+      "contract_version": "1.0.0",
+      "enabled": true,
+      "source_boundary": "hybrid_sot"
+    }
+  },
+  "federation": {
+    "can_export": true,
+    "can_import": true,
+    "child_graphs": [],
+    "parent_graph": null
+  },
+  "format": "mirai-graph",
+  "graph": {
+    "generated": [
+      "mirai/graph/docs/project-context.md",
+      "mirai/graph/generated"
+    ],
+    "objects": [
+      "mirai/graph/specs/objects/capability-docara-build-preview-verification.json",
+      "mirai/graph/specs/objects/capability-docara-components-smart-design.json",
+      "mirai/graph/specs/objects/capability-docara-content-localization-navigation.json",
+      "mirai/graph/specs/objects/capability-docara-developer-sdk-qa.json",
+      "mirai/graph/specs/objects/capability-docara-project-lifecycle.json",
+      "mirai/graph/specs/objects/capability-docara-security-troubleshooting.json",
+      "mirai/graph/specs/objects/capability-docara-settings-inheritance.json",
+      "mirai/graph/specs/objects/capability-docara-update-release-publication.json",
+      "mirai/graph/specs/objects/capability-map-capability-docara-documentation-contour-build.json",
+      "mirai/graph/specs/objects/capability-map-capability-docara-existing-contour.json",
+      "mirai/graph/specs/objects/capability-map-capability-docara-runtime-reference-diagnosis.json",
+      "mirai/graph/specs/objects/capability-map-capability-docara-source-backed-documentation-tracking.json",
+      "mirai/graph/specs/objects/capability-map-constraint-docara-capability-map-boundary.json",
+      "mirai/graph/specs/objects/capability-map-gate-docara-capability-map-conformance.json",
+      "mirai/graph/specs/objects/capability-map-source-docara-architecture-and-project-model-md-c56846a2a33f.json",
+      "mirai/graph/specs/objects/capability-map-source-docara-build-preview-and-verification-md-f26452b7ea3b.json",
+      "mirai/graph/specs/objects/capability-map-source-docara-content-locales-and-navigation-md-b34e54ba1e6e.json",
+      "mirai/graph/specs/objects/capability-map-source-docara-developer-sdk-and-qa-md-fb236802201d.json",
+      "mirai/graph/specs/objects/gate-docara-acceptance.json",
+      "mirai/graph/specs/objects/policy-docara-lifecycle-separation.json",
+      "mirai/graph/specs/objects/policy-docara-source-ownership.json",
+      "mirai/graph/specs/objects/skill-docara-core.json",
+      "mirai/graph/specs/project-continuity.json"
+    ],
+    "raw_sources": [
+      "README.md",
+      "skills/docara/SKILL.md",
+      "skills/docara/references",
+      "skills/docara/rules"
+    ],
+    "relations": [
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-governed-by-constraint-docara-capability-map-boundary.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-validated-by-gate-docara-capability-map-conformance.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-contour-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-contour-governed-by-constraint-docara-capability-map-boundary.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-contour-validated-by-gate-docara-capability-map-conformance.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-governed-by-constraint-docara-capability-map-boundary.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-validated-by-gate-docara-capability-map-conformance.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-documented-by-source-docara-content-locales-and-navigation-md-b34e54ba1e6e.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-documented-by-source-docara-developer-sdk-and-qa-md-fb236802201d.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-governed-by-constraint-docara-capability-map-boundary.json",
+      "mirai/graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-validated-by-gate-docara-capability-map-conformance.json",
+      "mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-documentation-contour-build.json",
+      "mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-existing-contour.json",
+      "mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-runtime-reference-diagnosis.json",
+      "mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-source-backed-documentation-tracking.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-build-preview-verification.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-components-smart-design.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-content-localization-navigation.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-developer-sdk-qa.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-project-lifecycle.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-security-troubleshooting.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-settings-inheritance.json",
+      "mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-update-release-publication.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-governed-by-policy-docara-lifecycle-separation.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-governed-by-policy-docara-source-ownership.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-build-preview-verification.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-components-smart-design.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-content-localization-navigation.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-developer-sdk-qa.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-project-lifecycle.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-security-troubleshooting.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-settings-inheritance.json",
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json"
+    ],
+    "root": "mirai/graph",
+    "schemas": [],
+    "source_of_truth": [
+      "mirai/graph/specs",
+      "mirai/graph/specs/index.json"
+    ]
+  },
+  "id": "ai-codex-skill-docara.graph",
+  "imports": [],
+  "kind": "skill",
+  "owner": "docara",
+  "profiles": [
+    "skill_runtime"
+  ],
+  "runtime": {
+    "default_context_depth": 2,
+    "default_max_objects": 12,
+    "fallback_gap_output": "source/memory/graph-gaps/",
+    "fallback_to_raw_allowed": "with_explicit_gap",
+    "graph_context_required_before_raw_source": false,
+    "graph_required": false
+  },
+  "schema_version": "2.0.0",
+  "scope": "skill",
+  "title": "Docara Owner Skill Graph"
+}

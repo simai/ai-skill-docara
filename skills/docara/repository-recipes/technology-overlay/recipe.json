@@ -32,7 +32,7 @@
   "source_contract": {
     "entrypoints": [
       "skills/docara/SKILL.md",
-      "graph/specs/index.json"
+      "mirai/graph/specs/index.json"
     ],
     "processes": [
       "skills/docara/references/developer-sdk-and-qa.md"
@@ -65,7 +65,7 @@
     {
       "id": "docara.source-check.1",
       "type": "owner_source",
-      "ref": "graph/specs/index.json",
+      "ref": "mirai/graph/specs/index.json",
       "required": true
     }
   ]

@@ -11,8 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "skills/docara/SKILL.md"
-INDEX = ROOT / "graph/specs/index.json"
-DNA = ROOT / "graph/dna/skill-dna.json"
+INDEX = ROOT / "mirai/graph/specs/index.json"
+DNA = ROOT / "mirai/graph/dna/skill-dna.json"
 EXPECTED_REFERENCES = {
     "architecture-and-project-model.md",
     "settings-and-inheritance.md",

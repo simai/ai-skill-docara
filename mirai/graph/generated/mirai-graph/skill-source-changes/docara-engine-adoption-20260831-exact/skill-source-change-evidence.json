@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.evidence",
+  "created_at": "2026-08-31T09:16:47.081798+00:00",
+  "skill": "docara",
+  "repo": "repo://ai-codex-skill-docara",
+  "base": "HEAD~1",
+  "base_commit": "7c0ebc4b0982f2d2ccd75fb759d50042f5ef7b0c",
+  "comparison_mode": "baseline_to_worktree",
+  "detector_fingerprint": "634bee4fa1369a93991088ac1d7db6570f1bc58e28c71eb941d86061196e92d7",
+  "detector_report_ref": "graph/generated/mirai-graph/skill-source-changes/docara-engine-adoption-20260831-exact/detector-report.json",
+  "changed_files": [
+    {
+      "path": "CHANGELOG.md",
+      "source_path": "CHANGELOG.md",
+      "change_types": [
+        "documentation",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "334ab696dc773fc474f3599f00c832afd94732edcfa858b940add33f3a738042",
+      "source_bytes": 1972,
+      "baseline_path": "CHANGELOG.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "374139bdf44536f9701fe35baf59df8c526f5a9bc50fe278306b5e0cb6db9227",
+      "baseline_bytes": 1761
+    },
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "6c26e939f3b16cfaf2b92774a445dab1f55e60c9c6839b5c114565fcc3551448",
+      "source_bytes": 7832,
+      "baseline_path": "skills/docara/SKILL.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "7f0c69b9f786fa239c6800e35b6d22642dfc670e740589926f09c2adb4400ce4",
+      "baseline_bytes": 7613
+    },
+    {
+      "path": "skills/docara/references/update-release-and-publication.md",
+      "source_path": "references/update-release-and-publication.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "51267e0fbaee28438a4a766ec94e9866efbe0781c835bcf8c8abcaef959df991",
+      "source_bytes": 5841,
+      "baseline_path": "skills/docara/references/update-release-and-publication.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "97720a8ae44c0f342ee87cad69300d3217c570a80590da40fc361909af743cd6",
+      "baseline_bytes": 5277
+    }
+  ],
+  "change_types": [
+    "capability",
+    "documentation",
+    "federation-impact",
+    "methodology",
+    "routing-impact"
+  ],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "detected_specialists": [],
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "evidence_refs": [
+    "CHANGELOG.md",
+    "skills/docara/SKILL.md",
+    "skills/docara/references/update-release-and-publication.md"
+  ],
+  "canonical_write_allowed": false
+}

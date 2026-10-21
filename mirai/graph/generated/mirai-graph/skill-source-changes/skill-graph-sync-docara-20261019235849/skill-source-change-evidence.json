@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.evidence",
+  "created_at": "2026-10-19T23:58:50.047895+00:00",
+  "skill": "docara",
+  "repo": "repo://ai-codex-skill-docara",
+  "base": "2c32efbc18706f55451b6b404dbf923038402755",
+  "base_commit": "2c32efbc18706f55451b6b404dbf923038402755",
+  "comparison_mode": "baseline_to_worktree",
+  "detector_fingerprint": "0f5c9c8e150ef06af0575fd7e803671ebef7e02bfc0b8ea3432b24a7c4f4d47e",
+  "detector_report_ref": "graph/generated/mirai-graph/skill-source-changes/skill-graph-sync-docara-20261019235849/detector-report.json",
+  "changed_files": [
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "2f961239cb02081295fc441fb9f2ad7f8331cb2ccaea3cd66cd3fb0e69cbc813",
+      "source_bytes": 7832,
+      "baseline_path": "skills/docara/SKILL.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "311437e8fe7ccb494f4cd752f47b8fe81cb8d17cabe7443ddf3dcddecd957c5f",
+      "baseline_bytes": 7657
+    },
+    {
+      "path": "skills/docara/quality/technology-contract-fixtures.json",
+      "source_path": "quality/technology-contract-fixtures.json",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "98ad9bf215c4ba7038ba3c6625f688f991e49984a73debfc6a8a1c3d42893373",
+      "source_bytes": 3541,
+      "baseline_path": "skills/docara/quality/technology-contract-fixtures.json",
+      "baseline_mode": "100644",
+      "baseline_sha256": "6a0de9f95f735409bf0e89ff13ebb3115f24379be96da875fd575e10687c72e1",
+      "baseline_bytes": 2321
+    },
+    {
+      "path": "skills/docara/technologies/documentation-site-lifecycle.json",
+      "source_path": "technologies/documentation-site-lifecycle.json",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "methodology",
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "A",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "2b22e8553e9cb1082320102ebe535bd009b4be53178252b5182f6abbcf1943a3",
+      "source_bytes": 13125,
+      "baseline_path": "skills/docara/technologies/documentation-site-lifecycle.json",
+      "baseline_mode": "not_present",
+      "baseline_sha256": "not_present",
+      "baseline_bytes": 0
+    }
+  ],
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "methodology",
+    "routing-impact",
+    "runtime"
+  ],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "detected_specialists": [],
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "evidence_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/quality/technology-contract-fixtures.json",
+    "skills/docara/technologies/documentation-site-lifecycle.json"
+  ],
+  "canonical_write_allowed": false
+}

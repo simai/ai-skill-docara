@@ -13,3 +13,7 @@ graph/generated/
 
 # Mirai Graph local Project Technology state
 .mirai-graph/project-technology/
+
+
+# Mirai 2 local state: migration backups, staging, runtime
+.mirai/

@@ -21,7 +21,7 @@ verification receipts. It covers:
   publication, and troubleshooting.
 
 The installable entry point is [skills/docara/SKILL.md](skills/docara/SKILL.md).
-The compact capability graph is [graph/specs/index.json](graph/specs/index.json).
+The compact capability graph is [mirai/graph/specs/index.json](mirai/graph/specs/index.json).
 The Docara product and the target project's exact installed package remain the
 source of truth for schemas and executable behavior.
 

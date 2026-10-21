@@ -14,7 +14,7 @@ Maintain the Hybrid Source of Truth instead:
 
 - `skills/docara/SKILL.md` is the compact router and safety contract;
 - `skills/docara/references/` contains current operational knowledge;
-- `graph/specs/` exposes machine-readable capabilities, policies, and gates;
+- `mirai/graph/specs/` exposes machine-readable capabilities, policies, and gates;
 - product schemas, CLI help, code, and documentation remain authoritative for
   exact fields and behavior.
 

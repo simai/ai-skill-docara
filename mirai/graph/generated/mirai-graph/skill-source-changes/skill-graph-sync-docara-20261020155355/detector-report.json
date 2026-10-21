@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.skill-change.detect",
+  "created_at": "2026-10-20T15:53:56.122172+00:00",
+  "repo": "repo://ai-skill-docara",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": "c08299ded96804d8d040e1033071574242e12643",
+  "base_commit": "c08299ded96804d8d040e1033071574242e12643",
+  "comparison_mode": "baseline_to_worktree",
+  "git": {
+    "dirty": false,
+    "ahead": 1,
+    "head": "0b0ba33"
+  },
+  "changed_files": [
+    {
+      "path": "skills/docara/technologies/documentation-site-lifecycle.json",
+      "source_path": "technologies/documentation-site-lifecycle.json",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "methodology",
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "6464e6cc17c7e59e1ad035ed1fc26a353b3619c6546ee918598e742d78136dd9",
+      "source_bytes": 13051,
+      "baseline_path": "skills/docara/technologies/documentation-site-lifecycle.json",
+      "baseline_mode": "100644",
+      "baseline_sha256": "ea3c5765fa80c032e97f21e65b7de3a8846d3250d34cbc8d5b58019e9ccf66cf",
+      "baseline_bytes": 13177
+    }
+  ],
+  "changed_skill_count": 1,
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "methodology",
+    "routing-impact",
+    "runtime"
+  ],
+  "detected_specialists": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "specialist_promotion_required": false,
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "blockers": [],
+  "status": "changed",
+  "detector_fingerprint": "f33eff9877daf1285cdafc9ded68cbd203d45b30467031820256f520ba92cb4a"
+}

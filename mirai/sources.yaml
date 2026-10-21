@@ -1,0 +1,26 @@
+contract_version: 1.0.0
+sources:
+  - authority: owner_source
+    confidentiality: internal
+    freshness: task_boundary
+    id: source.migrated_1
+    ref: README.md
+    scope: project
+  - authority: owner_source
+    confidentiality: internal
+    freshness: task_boundary
+    id: source.migrated_2
+    ref: skills/docara/SKILL.md
+    scope: project
+  - authority: owner_source
+    confidentiality: internal
+    freshness: task_boundary
+    id: source.migrated_3
+    ref: skills/docara/references
+    scope: project
+  - authority: owner_source
+    confidentiality: internal
+    freshness: task_boundary
+    id: source.migrated_4
+    ref: skills/docara/rules
+    scope: project
