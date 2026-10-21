@@ -1,0 +1,49 @@
+{
+  "contract_version": "1.0.0",
+  "id": "envelope.mirai-ordering.ai-codex-skill-docara.graph",
+  "scope": "mirai-graph:ai-codex-skill-docara.graph",
+  "allowed_change_kinds": [
+    "derived_navigation"
+  ],
+  "forbidden_targets": [
+    "adaptive/graph/ai-codex-skill-docara.graph/deletions/*",
+    "adaptive/graph/ai-codex-skill-docara.graph/modifications/*"
+  ],
+  "risk_ceiling": "low",
+  "confidence_floor": 0.7,
+  "evidence_requirements": [
+    "admission:ready_for_review",
+    "evidence:exact_citation",
+    "screen:no_secret_or_personal_data",
+    "change:addition_only"
+  ],
+  "replay_requirements": {
+    "required_for": [],
+    "minimum_successful_replays": 0
+  },
+  "resource_patterns": [
+    "adaptive/graph/ai-codex-skill-docara.graph/objects/*",
+    "adaptive/graph/ai-codex-skill-docara.graph/relations/*"
+  ],
+  "change_budget": {
+    "max_changes": 200,
+    "max_payload_bytes": 1048576
+  },
+  "issued_at": "2026-10-21T01:29:51.679Z",
+  "expires_at": "2027-10-21T01:29:51.679Z",
+  "rollback_contract": {
+    "required": true,
+    "retention_ms": 7776000000,
+    "verify_readback": true
+  },
+  "policy_digest": "sha256:f85d6927762123aaafce9ff09552c483c5463d9247d6bf7f8b340b9f1119b9a1",
+  "approver_signatures": [
+    {
+      "signer_ref": "owner:rim@zabarov.com",
+      "signature_ref": "delegation:21.10.2026.f3ce1902",
+      "signature_digest": "sha256:a2aab618cb6fe8fee836b62daa4a3fe36e0b1e9bdf532fc034bfcb399d26c8f1"
+    }
+  ],
+  "canonical_write_allowed": false,
+  "digest": "sha256:96026f4ab21e96b433abb4240c4f6b0e59d215c38276526ac3fe8c7098f55ac0"
+}

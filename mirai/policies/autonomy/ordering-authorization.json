@@ -1,0 +1,15 @@
+{
+  "contract_version": "1.0.0",
+  "id": "autonomy_authorization.dd371e1104965ce7",
+  "approved": true,
+  "envelope_id": "envelope.mirai-ordering.ai-codex-skill-docara.graph",
+  "envelope_digest": "sha256:96026f4ab21e96b433abb4240c4f6b0e59d215c38276526ac3fe8c7098f55ac0",
+  "scope": "mirai-graph:ai-codex-skill-docara.graph",
+  "policy_digest": "sha256:f85d6927762123aaafce9ff09552c483c5463d9247d6bf7f8b340b9f1119b9a1",
+  "approved_by": "rim@zabarov.com",
+  "issued_at": "2026-10-21T01:29:53.129Z",
+  "expires_at": "2027-01-19T01:29:53.129Z",
+  "canonical_write_allowed": false,
+  "signature_algorithm": "hmac-sha256-local",
+  "signature": "hmac-sha256:fa71206a8fe918599943342b63dec31e9c74ad641713eaf0fb40ddea99f16acd"
+}

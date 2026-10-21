@@ -5,7 +5,7 @@
 - Kind: `project`
 - Mirai: `>=2.1.0-alpha <3.0.0`
 - Project manifest contract: `1.0.0`
-- Lock digest: `sha256:67b219598f0283e248785615eaa14a5594c2c294a7b0d9ffff6b4c221cc0a175`
+- Lock digest: `sha256:f9c108f41d5bfeff7cc4b7ea48969798b68b08ee4b133abb841acce0778a5fea`
 - Profiles: `skill_runtime`
 
 ## Boundaries
@@ -38,6 +38,7 @@ Mirai uses Hybrid SOT. Generated context and evidence do not authorize canonical
 - `mirai/graph/specs/objects/policy-docara-source-ownership.json`
 - `mirai/graph/specs/objects/skill-docara-core.json`
 - `mirai/graph/specs/project-continuity.json`
+- `mirai/graph/ordering/objects.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-governed-by-constraint-docara-capability-map-boundary.json`
@@ -75,6 +76,7 @@ Mirai uses Hybrid SOT. Generated context and evidence do not authorize canonical
 - `mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-security-troubleshooting.json`
 - `mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-settings-inheritance.json`
 - `mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json`
+- `mirai/graph/ordering/relations.json`
 - `mirai/sources.yaml`
 - `mirai/programs`
 - `mirai/components`

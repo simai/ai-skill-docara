@@ -42,7 +42,8 @@
           "mirai/graph/specs/objects/policy-docara-lifecycle-separation.json",
           "mirai/graph/specs/objects/policy-docara-source-ownership.json",
           "mirai/graph/specs/objects/skill-docara-core.json",
-          "mirai/graph/specs/project-continuity.json"
+          "mirai/graph/specs/project-continuity.json",
+          "mirai/graph/ordering/objects.json"
         ],
         "relations": [
           "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json",
@@ -81,7 +82,8 @@
           "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-project-lifecycle.json",
           "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-security-troubleshooting.json",
           "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-settings-inheritance.json",
-          "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json"
+          "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json",
+          "mirai/graph/ordering/relations.json"
         ],
         "root": "mirai/graph"
       },
@@ -122,7 +124,9 @@
   "entrypoint_digests": {
     "mirai/components": "sha256:0bcdf2e80057f6348dd29d4c6378308d1c60f894d6f3759694a2906d90f5e547",
     "mirai/context": "sha256:21df775001eec7208a9710460d39ff3d8c5afb6385b89e66b9211f4154242e50",
-    "mirai/graph": "sha256:cabe244259265a327c880b23bcda96a2ed926751a3c25c15f6874e3218af2063",
+    "mirai/graph": "sha256:7de9b0c442875398321fe582641f85115371146fbf6873df88202762ab834d31",
+    "mirai/graph/ordering/objects.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "mirai/graph/ordering/relations.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/specs/objects/capability-docara-build-preview-verification.json": "sha256:0b18059b17b757ce993dced66e25dd2aec4f92c7e5e8786137c497a468463f61",
     "mirai/graph/specs/objects/capability-docara-components-smart-design.json": "sha256:93c853e066084ca580c9a3e7d6176151d8018b8ccf915d01bf4388b1397ec128",
     "mirai/graph/specs/objects/capability-docara-content-localization-navigation.json": "sha256:14a26510504822c7c24d13af7d4d3d57ffdc6f188dcdbc9373c702cada2e3982",
@@ -145,7 +149,7 @@
     "mirai/graph/specs/objects/policy-docara-lifecycle-separation.json": "sha256:2fa6eac1491bfa31217bb10e344df0b1dd5822e454343971a503034d93df875c",
     "mirai/graph/specs/objects/policy-docara-source-ownership.json": "sha256:86d399dd4784df630c45cc1e66191bd9eef5029465b372f3f9bfffa10f18af6f",
     "mirai/graph/specs/objects/skill-docara-core.json": "sha256:40f29e5dd0d3a3cc8dabbb4b619d8196733fad7779c65546c10f5f42f8a753a3",
-    "mirai/graph/specs/project-continuity.json": "sha256:93eeab5a8ffd240577e1066d041e14c09da0ae3c72116f1952866e3c612a0f58",
+    "mirai/graph/specs/project-continuity.json": "sha256:2566a16c291c21b57649693145f1dbf5fec46eaff6f2c140b3814c84b5e782f5",
     "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json": "sha256:95f3ab5aa433ce092a0e7bd666bbe37b484982a521e85c9d2acfa88104a8300b",
     "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json": "sha256:820944d24b9d51199e89d215ae2e00acb83568ee911cd8146c57cc9f5a1e4e5c",
     "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-governed-by-constraint-docara-capability-map-boundary.json": "sha256:346dd74a6ebb20877233c17a691116e2fbd3f16e2313724dddae8548e40a463e",
@@ -184,11 +188,11 @@
     "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-settings-inheritance.json": "sha256:1ad82838e4578b2b21123a07d22a84503221764fa3304c6009152b3876cad3e5",
     "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json": "sha256:415ae39ba5cd262c7a5a2dc5d3a6c4b6dd3ad1f4f3c91811896e07bd19124d75",
     "mirai/interfaces": "sha256:837b7ed929cc27bf432396e4a0e57112c35531e73214f9459d0919b08ebf7ea4",
-    "mirai/policies": "sha256:6b0d5b4e361387cc9f548f302fc5a6bbbc3b187136e3b268632681d0bbddc42a",
+    "mirai/policies": "sha256:0b8e456ca535770f5c5416853666e37c471756428a9bf6fa9094b5ace844356d",
     "mirai/programs": "sha256:59716889c97e2a0461f1a005e11fc00ce5aab42cabaeb566838213511939b0f7",
     "mirai/sources.yaml": "sha256:8f63571ad06a430b4538300be42e4220d2a794ff08fc862eea9bb2558b0bcff6"
   },
   "source_reference_digest": "sha256:8f63571ad06a430b4538300be42e4220d2a794ff08fc862eea9bb2558b0bcff6",
   "canonical_write_allowed": false,
-  "digest": "sha256:67b219598f0283e248785615eaa14a5594c2c294a7b0d9ffff6b4c221cc0a175"
+  "digest": "sha256:f9c108f41d5bfeff7cc4b7ea48969798b68b08ee4b133abb841acce0778a5fea"
 }

@@ -39,7 +39,8 @@
       "mirai/graph/specs/objects/policy-docara-lifecycle-separation.json",
       "mirai/graph/specs/objects/policy-docara-source-ownership.json",
       "mirai/graph/specs/objects/skill-docara-core.json",
-      "mirai/graph/specs/project-continuity.json"
+      "mirai/graph/specs/project-continuity.json",
+      "mirai/graph/ordering/objects.json"
     ],
     "relations": [
       "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json",
@@ -78,7 +79,8 @@
       "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-project-lifecycle.json",
       "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-security-troubleshooting.json",
       "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-settings-inheritance.json",
-      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json"
+      "mirai/graph/specs/relations/relation-skill-docara-core-implements-capability-docara-update-release-publication.json",
+      "mirai/graph/ordering/relations.json"
     ],
     "schemas": [],
     "generated": [],
