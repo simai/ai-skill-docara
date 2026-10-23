@@ -1,7 +1,7 @@
 # Skill Mesh Balance
 
-`$docara` owns the standalone Docara 2 product contract: project discovery and
-initialization, JSON schemas and inheritance, content-to-route behavior,
+`$docara` owns the standalone Docara 3 product contract (and the move of
+legacy 2.x projects to it): project discovery and initialization, JSON schemas and inheritance, content-to-route behavior,
 locales, navigation, typed Document IR, component admission, design
 composition, build/preview/verification, Developer/AI SDK integration,
 transactional engine update, package preparation, and static publication
@@ -28,8 +28,11 @@ handoff.
   and live deployment.
 - `$dev` owns implementation in the Docara engine repository. `$docara` owns
   the product-specific contract and expected project behavior.
-- `$graph` owns capability structure, relations, readiness, and generated
-  context. It does not replace this skill's domain method.
+- `$framework` owns SIMAI Framework itself: components, tokens, Smart
+  artifacts and Framework releases. `$docara` owns how a project pins and uses
+  the release bundled with Docara.
+- `$graph` owns graph structure and schemas; `$mirai` owns ordering the
+  skill's data. Neither replaces this skill's domain method.
 - `$teamlead` coordinates multi-stage, multi-owner, release, or migration work.
 
 ## Routing rules

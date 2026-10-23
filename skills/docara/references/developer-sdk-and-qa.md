@@ -1,5 +1,7 @@
 # Developer and AI SDK, preview, test, and QA
 
+> Источник: simai/docara (https://github.com/simai/docara): docs/site/content/ru/reference/cli.md, docs/site/content/ru/development/developer-sdk.md, tools/mcp-docara · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Read-only discovery](#read-only-discovery)
@@ -18,6 +20,8 @@ composition, and `PageBuilder`. It is not a parallel implementation path.
 Run from an initialized project:
 
 ```bash
+php vendor/bin/docara            # or `docara list`: list the commands
+php vendor/bin/docara --version
 php vendor/bin/docara capabilities --json
 php vendor/bin/docara doctor --json
 php vendor/bin/docara list smart --json
@@ -170,7 +174,8 @@ must not be deployed as a site build.
 
 ## Structured QA
 
-Create an immutable draft plan:
+Create an immutable draft plan (`--page` is required with `--dry-run`;
+otherwise `QA_DRY_RUN_REQUIRED`):
 
 ```bash
 php vendor/bin/docara qa smart project.notice \

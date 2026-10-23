@@ -1,11 +1,14 @@
 # Security and troubleshooting
 
+> Источник: simai/docara (https://github.com/simai/docara): docs/site/content/ru/troubleshooting.md, docs/site/content/ru/reference/errors, docs/site/content/ru/reference/security-and-errors.md · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Fail-closed model](#fail-closed-model)
 - [Diagnostic workflow](#diagnostic-workflow)
 - [Common failure classes](#common-failure-classes)
 - [Static-output failures](#static-output-failures)
+- [Diagnostic code reference](#diagnostic-code-reference)
 - [Runtime discovery](#runtime-discovery)
 - [Evidence to retain](#evidence-to-retain)
 
@@ -119,9 +122,29 @@ resolution diverge.
 Fix the source Markdown/JSON/asset/lock/registry and rebuild. Generated
 receipts are evidence, not repair inputs.
 
+## Diagnostic code reference
+
+The product documentation has Reference > Error codes: a cause and a fix for
+each stable code and every `verify-static` marker (content, site settings,
+upgrade, verify-static). Look a code up there before changing sources.
+Frequent 3.x cases:
+
+- `COMPOSITION_RECIPE_RUNTIME_REQUIRED`: Node.js 20+ not found; install it or
+  set `DOCARA_NODE_BINARY`.
+- Composer resolves only 2.x: clear the Composer cache and drop a stale
+  `repositories` entry, then `composer require simai/docara:^3.0`.
+- Composer refuses a missing PHP extension (`ctype`, `dom`, `intl`, `json`,
+  `libxml`, `mbstring`).
+- `init` refuses a non-empty directory or an existing project; use
+  `update`/`upgrade` for an existing project.
+- `MAJOR_UPGRADE_REQUIRED`: `upgrade` asked to cross a major; use the manual
+  2.x -> 3.x route.
+- A page uses `sf-table` or `sf-admin-menu`: those components are not in the
+  free Framework release.
+
 ## Runtime discovery
 
-When `php`, Composer, autoload, or `vendor/bin/docara` is unavailable:
+When `php`, Composer, Node.js, autoload, or `vendor/bin/docara` is unavailable:
 
 1. inspect the project and package lock before installing anything;
 2. discover approved local runtimes and exact executable paths;

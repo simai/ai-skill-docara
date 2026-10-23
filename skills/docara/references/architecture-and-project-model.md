@@ -1,5 +1,7 @@
 # Architecture and project model
 
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site, resources/schemas, src · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Mental model](#mental-model)
@@ -17,9 +19,20 @@ project assets. It emits static HTML, CSS, JavaScript, assets, search data,
 redirects, and machine-readable receipts. The published site has no database,
 backend, daemon, or CDN dependency.
 
-Normal authoring and build require PHP 8.2+, Composer, and `simai/docara`.
-Node.js is not part of the portable project path. Optional browser/visual QA or
-package-maintainer asset work may use additional tooling.
+Docara 3 (`simai/docara:^3.0`, Apache-2.0) builds with PHP 8.2+ and the
+extensions `ctype`, `dom`, `intl`, `json`, `libxml`, `mbstring`, Composer, and
+Node.js 20+. Node.js runs the SIMAI Framework Composition Recipe runtime at
+build time; set `DOCARA_NODE_BINARY` when `node` is not on `PATH` (otherwise
+the build stops with `COMPOSITION_RECIPE_RUNTIME_REQUIRED`). The published site
+stays static. Optional browser/visual QA may use additional tooling.
+
+The package bundles a pinned public SIMAI Framework release (Core, Smart and
+the Recipe runtime from one `simai/ui` commit): `ui-32c7a64e4575` since 3.6.0,
+`ui-25beeb814ae8` in 3.1.0-3.5.0, `ui-82fc0ba882ba` in 3.0.x. No Framework
+checkout is needed; `DOCARA_SIMAI_UI_ROOT` and `SIMAI_UI_ROOT` are only an
+optional way to build with another distribution of the same Recipe
+specification. Always read the exact pair from the project lock and the
+installed package rather than from this list.
 
 ## Compiler pipeline
 
@@ -59,8 +72,10 @@ composer.json
 composer.lock
 vendor/
 docara.json
+docara.authoring.json                  # optional page profiles
 redirects.json                         # optional when no explicit redirects exist
 simai-framework.lock.json
+contracts/generated/                   # created by init; commit it
 assets/
 examples/                              # optional shared HTML/CSS/JS demonstrations
 translations.lock.json                 # optional accepted translation state
@@ -69,6 +84,7 @@ content/
     lang.json
     section.json                       # optional
     index.md
+    404.md                             # optional; replaces the built-in 404 page
     guides.md
     guides/
       section.json                     # optional
@@ -79,7 +95,8 @@ design/                                # optional project-owned design artifacts
 .docara/
   engine/                              # package-owned state
 build_local/                           # generated
-build_production/                      # generated
+build_production/                      # generated; publish this folder
+build_production.docara/               # generated receipts; never publish
 ```
 
 Use the flat section form by default: `guides.md` owns `/guides/`, while the
@@ -102,7 +119,8 @@ Package-owned or generated surfaces:
 
 - `.docara/engine/**` and its ownership manifest;
 - update plans and rollback packages;
-- `build_*` and build-local `.docara/**` receipts;
+- `build_*` and the receipts in `build_<environment>.docara/` (3.0.0 kept
+  them inside the output as `build_<environment>/.docara/`);
 - generated `_docara/**` assets, search data, and catalogues.
 - generated `.docara/examples.json` and `.docara/translation-status.json`.
 
@@ -116,15 +134,28 @@ same directory:
 
 ```bash
 mkdir /path/to/project && cd /path/to/project
-composer require simai/docara:^2.0
-php vendor/bin/docara init .
+composer require simai/docara:^3.0
+php vendor/bin/docara init .            # --template=minimal|showcase --lang=en|ru
 php vendor/bin/docara doctor --json
 php vendor/bin/docara build production
 php vendor/bin/docara verify-static build_production
 ```
 
+The default starter is `--template=minimal --lang=en`: home, writing and
+components pages, one locale, unprefixed routes. The 2.x starter (component
+catalogue with project Smart demos) is `--template=showcase --lang=ru`. The
+template is chosen only at the first `init`.
+
 `init` accepts an empty directory or one containing only that verified
-project-local Composer runtime. `init --update` is disabled. Updating an
+project-local Composer runtime; `.git/`, `.gitignore`, `.gitattributes` and
+file-manager files (`.DS_Store`, `Thumbs.db`, `desktop.ini`) do not count, so
+`git init` before `init` works. If Composer offers only 2.x, clear its cache
+and remove a stale `repositories` entry (see the product troubleshooting page).
+`init --update` is disabled.
+
+Commit everything `init` created, including `.docara/engine/` and
+`contracts/generated/`; ignore `/vendor/`, `/build_*/` (this also covers
+`build_*.docara/`), `/.docara-preview/` and `/.docara-qa/`. Updating an
 existing project uses the transactional `upgrade` workflow described in
 [update-release-and-publication.md](./update-release-and-publication.md).
 

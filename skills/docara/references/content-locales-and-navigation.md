@@ -1,5 +1,7 @@
 # Content, locales, and navigation
 
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/authoring (markdown, localization, multilingual-site, search, redirects) · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Markdown ownership](#markdown-ownership)
@@ -35,8 +37,16 @@ profile: how_to
 # Installation
 ```
 
-Do not add arbitrary front matter, layout instructions, executable code, or raw
-HTML. Raw HTML is rejected. Use an admitted component for rich content.
+The parser accepts exactly `title`, `description`, `tags`, `draft`,
+`noindex`, `translation_key`, `profile`, and `composition_recipe`. Do not add
+arbitrary front matter, layout instructions, executable code, or raw HTML. Raw
+HTML is rejected. Use an admitted component for rich content.
+
+A link `[text](#docara-search)` opens the search dialog (it leads to the
+locale home page without JavaScript or with search off). An optional
+`404.md` at the root of the default locale replaces the built-in "Page not
+found" content and is published as `404.html`; its relative links resolve
+from `<locale>/404/`.
 
 ## Optional page authoring profiles
 
@@ -112,9 +122,12 @@ current work queue for substantive content or localization work:
 
 ```bash
 php vendor/bin/docara translations status
-php vendor/bin/docara translations status --locale=en
+php vendor/bin/docara translations status --locale=en --kind=page
 php vendor/bin/docara translations status --status=stale --json
 ```
+
+`--kind=page|lang` filters the report (3.7.0+); without it both kinds are
+listed.
 
 The configured source locale is authoritative. Equal locale-relative paths
 pair automatically; different paths require the same explicit
@@ -136,10 +149,24 @@ php vendor/bin/docara translations accept \
 php vendor/bin/docara translations accept --apply=<plan-sha256> --json
 ```
 
-Use `--kind=lang` for a `lang.json` key. Promote to `human_reviewed` only after
+Since 3.3.0 one plan may accept a reviewed set: a repeated `--key`, a
+`--prefix` (such as `guide/`) or a `--status` filter; unselected items are
+listed as `skipped`. Use `--kind=lang` for a `lang.json` key. Promote to `human_reviewed` only after
 an explicit editorial review. Docara never calls AI or the network and never
 edits Markdown; `status` and `build` are read-only with respect to source and
 the lock. Any changed input invalidates the plan.
+
+In `report` mode translation issues are warnings. With
+`translation_tracking.mode: "publish-current"` a `stale`, `unverified` or
+`structure_mismatch` page shows the source text at the target URL under a
+notice (`language.fallback_notice` in `lang.json`), is `noindex` and stays out
+of search, `hreflang` and the sitemap; an `orphan` page is not published and a
+`duplicate_key` stops the build. The build lists what it held back in
+`build_<environment>.docara/translation-publication.json`.
+
+`lang.json` groups include `error` (404 page) and `effects` (hero effect
+pause/play labels); every built-in interface string can be overridden in
+`content/<locale>/lang.json`.
 
 ## Documentation source tracking
 

@@ -124,7 +124,7 @@
   "entrypoint_digests": {
     "mirai/components": "sha256:0bcdf2e80057f6348dd29d4c6378308d1c60f894d6f3759694a2906d90f5e547",
     "mirai/context": "sha256:21df775001eec7208a9710460d39ff3d8c5afb6385b89e66b9211f4154242e50",
-    "mirai/graph": "sha256:69e13d4c8304047a7a6d6ed73e7a2749d55a9569177f3af90dac969cd0d00a8f",
+    "mirai/graph": "sha256:9d8910760025696f7590721302f6f54d62501e3a2d281401a2852288fdf1b5de",
     "mirai/graph/ordering/objects.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/ordering/relations.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/specs/objects/capability-docara-build-preview-verification.json": "sha256:0b18059b17b757ce993dced66e25dd2aec4f92c7e5e8786137c497a468463f61",
@@ -148,7 +148,7 @@
     "mirai/graph/specs/objects/gate-docara-acceptance.json": "sha256:2c3c8da6e32498b1ad2938e22d5b051ddaa96dd60387daf67359cd4a2626e7b3",
     "mirai/graph/specs/objects/policy-docara-lifecycle-separation.json": "sha256:2fa6eac1491bfa31217bb10e344df0b1dd5822e454343971a503034d93df875c",
     "mirai/graph/specs/objects/policy-docara-source-ownership.json": "sha256:86d399dd4784df630c45cc1e66191bd9eef5029465b372f3f9bfffa10f18af6f",
-    "mirai/graph/specs/objects/skill-docara-core.json": "sha256:40f29e5dd0d3a3cc8dabbb4b619d8196733fad7779c65546c10f5f42f8a753a3",
+    "mirai/graph/specs/objects/skill-docara-core.json": "sha256:0491cd478bf0cf81072ca7ad7b771ba65141f6270a68c9314af63e1e52fd2d3b",
     "mirai/graph/specs/project-continuity.json": "sha256:2566a16c291c21b57649693145f1dbf5fec46eaff6f2c140b3814c84b5e782f5",
     "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json": "sha256:95f3ab5aa433ce092a0e7bd666bbe37b484982a521e85c9d2acfa88104a8300b",
     "mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json": "sha256:820944d24b9d51199e89d215ae2e00acb83568ee911cd8146c57cc9f5a1e4e5c",
@@ -194,5 +194,5 @@
   },
   "source_reference_digest": "sha256:8f63571ad06a430b4538300be42e4220d2a794ff08fc862eea9bb2558b0bcff6",
   "canonical_write_allowed": false,
-  "digest": "sha256:ab078f26da94ba93efa1d7f8e28cfdf5906e3f0c64d8c2996693084c775a464d"
+  "digest": "sha256:969e559926ee56e02a513e2424575416cb8ad492df2b9e221ab009cffb7d4674"
 }

@@ -1,10 +1,13 @@
 # Upgrade, update, release, and publication
 
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{update,upgrade-3,publish,hosting,portal}.md · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Capability handshake](#capability-handshake)
 - [Project-local upgrade](#project-local-upgrade)
 - [Rollback](#rollback)
+- [Move a 2.x project to 3.x](#move-a-2x-project-to-3x)
 - [Legacy transition and low-level update](#legacy-transition-and-low-level-update)
 - [Release and skill gate](#release-and-skill-gate)
 - [Static publication](#static-publication)
@@ -20,8 +23,9 @@ php vendor/bin/docara capabilities --json
 
 Use the returned command definitions, schemas, lifecycle flags and
 `docara.ai_contract` version. One installed canonical skill may serve several
-Docara 2.x projects; never replace this handshake with assumptions about the
-newest package. If an old exact package has no `capabilities`, inspect its help,
+projects on different Docara releases (3.8.0 ships AI contract 1.1.1, inside
+the supported `>=1.0.0 <2.0.0`); never replace this handshake with assumptions
+about the newest package. If an old exact package has no `capabilities`, inspect its help,
 README and update documentation and use the legacy path below.
 
 ## Project-local upgrade
@@ -45,7 +49,7 @@ For reviewable automation:
 
 ```bash
 php vendor/bin/docara upgrade --check --json
-php vendor/bin/docara upgrade --to=2.5.0 --dry-run --json
+php vendor/bin/docara upgrade --to=3.8.0 --dry-run --json
 php vendor/bin/docara upgrade --apply=<exact-plan-sha256> --json
 ```
 
@@ -53,6 +57,8 @@ php vendor/bin/docara upgrade --apply=<exact-plan-sha256> --json
 prerelease, downgrade, constraint violation or different major. Changed
 Composer files, content, examples, assets, settings, translations, Framework
 lock, Smart/design source, engine or verified build make the plan stale.
+A different major returns `MAJOR_UPGRADE_REQUIRED`; use the manual route
+below.
 
 Build, serve, discovery and authoring remain offline. Do not add a background
 updater or call upgrade implicitly from those commands.
@@ -72,6 +78,38 @@ and build hashes before restoring the previous transaction. If a failure occurs
 during apply, compensation restores those surfaces automatically and preserves
 the last verified build.
 
+## Move a 2.x project to 3.x
+
+`upgrade` stays inside the current major. Move a 2.x project manually; Markdown,
+settings, translations and assets are not rewritten:
+
+1. Record `git status --short`, commit or save unfinished work, keep the last
+   verified `build_production` for rollback.
+2. `composer require simai/docara:^3.0 -W`.
+3. `php vendor/bin/docara update --verify`, `--dry-run`, then `--apply` (with
+   `--adopt` on the dry run when the project has no ownership manifest).
+4. Read `runtime.pair_id` in `simai-framework.lock.json`. `ui-32c7a64e4575`,
+   `ui-25beeb814ae8`, `ui-82fc0ba882ba` and the Docara 2.18 lock
+   `ui-4f5e5067afeb-smart-7d932ed51408` build with the bundled release; any
+   other value falls back to the legacy portable Smart copy, so replace the
+   lock with `vendor/simai/docara/stubs/portable/simai-framework.lock.json`
+   (a project-owned change: review it).
+5. `grep -rn "sf-admin-menu\|sf-table" content`: both components left the free
+   Framework release for a commercial SIMAI component package; rewrite those
+   pages (for example, a Markdown table instead of `sf-table`).
+6. Drop `DOCARA_SIMAI_UI_ROOT` / `SIMAI_UI_ROOT` from build and CI when they
+   only pointed at a Framework checkout; make sure Node.js 20+ is present.
+7. Complete build, `verify-static`, HTTP check of home, nested pages, search,
+   theme and component pages.
+
+Expect these 3.x output differences: shared assets once under
+`<base_url>_docara/` (not per locale prefix), receipts in
+`build_<environment>.docara/`, built-in page strings in English except on
+Russian pages, and `_docara/component-catalog.json` entries with `release`
+instead of `revision`/`author`/`changed_at`. Scripts that read
+`build_<environment>/.docara/` must move to `build_<environment>.docara/`.
+After that, compatible 3.x updates use `upgrade`.
+
 ## Pre-manifest transition and low-level update
 
 An existing site without the package-owned `.docara/engine` manifest gets one
@@ -80,7 +118,7 @@ not delete or move any older engine automatically:
 
 ```bash
 cd /path/to/site
-composer require simai/docara:^2.0
+composer require simai/docara:^3.0
 php vendor/bin/docara capabilities --json
 php vendor/bin/docara update --dry-run --adopt --json
 php vendor/bin/docara update --apply --json
@@ -103,8 +141,8 @@ php vendor/bin/docara update --apply --json
 php vendor/bin/docara update --rollback=latest
 ```
 
-Its plan may target only `.docara/engine`. It does not run Composer or change
-the dependency lock. Unknown files, dirty ownership, conflicts, symlinks or a
+Its plan may target only `.docara/engine`. `update` without an action runs
+`--verify`. It does not run Composer or change the dependency lock. Unknown files, dirty ownership, conflicts, symlinks or a
 stale plan fail before mutation. Never use `init --update`.
 
 ## Release and skill gate
@@ -131,10 +169,29 @@ Release and deploy require their own authorization.
 
 ## Static publication
 
-Build with the correct `base_url`, run `verify-static`, copy only those bytes
-to versioned staging, compare digests, smoke routes/assets/search/themes, then
-switch traffic atomically. Use `$ops` for hosting, access, backup, rollback and
-live changes. Build success is not deployment authorization.
+Build with the correct `base_url`, run `verify-static`, copy only
+`build_<environment>/` (never `build_<environment>.docara/`) to versioned
+staging, compare digests, smoke routes/assets/search/themes, then switch
+traffic atomically. Use `$ops` for hosting, access, backup, rollback and live
+changes. Build success is not deployment authorization.
+
+Publication surfaces added in 3.x (check the installed schema first):
+
+- `site_url` (origin plus `base_url`) adds `sitemap.xml`, `robots.txt`,
+  `llms.txt`, absolute canonical/hreflang and Open Graph tags;
+  `branding.share_image` adds `og:image`. Content that already ships one of
+  these files stops the build (`DISCOVERY_FILE_COLLISION`).
+- The build writes `404.html` at the deployment base (off with
+  `"not_found": {"enabled": false}`); the host must serve it: nginx
+  `error_page 404 /404.html;`, Apache `ErrorDocument 404 /404.html`, GitHub
+  Pages automatically.
+- A `portal` section builds one path of a larger portal (needs `site_url`, one
+  locale, `default_unprefixed` routing; no `sitemap.xml`, `robots.txt` or
+  `404.html`). `docara portal-artifact` packs it into a reproducible
+  `<product>-<version>-portal.tar.gz`, `.sha256` and receipt.
+- Docara's own documentation is published on GitHub Pages
+  (https://simai.github.io/docara/) by the product workflow; that is product
+  release work for `$dev`, not a project task.
 
 ## State boundaries
 

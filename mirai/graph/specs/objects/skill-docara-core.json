@@ -3,7 +3,7 @@
   "schema_version": "1.0.0",
   "kind": "skill",
   "title": "Docara skill core",
-  "summary": "Routes current standalone Docara 2 project work across authoring, settings, components, compilation, QA, updates, and publication.",
+  "summary": "Routes current standalone Docara 3 project work across authoring, settings, components, compilation, QA, updates, and publication.",
   "owner": "docara",
   "lifecycle": "active",
   "readiness": "pilot",

@@ -1,8 +1,12 @@
 # Components, Smart artifacts, and design composition
 
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/components, docs/site/content/ru/build/upgrade-3.md, resources/framework · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Selection ladder](#selection-ladder)
+- [Bundled Framework release](#bundled-framework-release)
+- [Typed blocks added in 3.x](#typed-blocks-added-in-3x)
 - [Typed Document IR](#typed-document-ir)
 - [Reusable examples](#reusable-examples)
 - [Smart providers](#smart-providers)
@@ -36,6 +40,38 @@ php vendor/bin/docara schema smart --json
 
 Catalogue metadata and documentation explain usage but do not grant
 admission. The manifest/provider/registry/lock contract is authoritative.
+
+## Bundled Framework release
+
+Docara 3 ships one pinned public SIMAI Framework release (Core, Smart and the
+Composition Recipe runtime from one `simai/ui` commit; `ui-32c7a64e4575`
+since 3.6.0). Projects whose lock names an earlier 3.x pair or the Docara 2.18
+lock build with it without edits. Composition Recipe editions 1.0.1 and 1.1.0
+are accepted, each only with its exact contract digest.
+
+`sf-admin-menu` and `sf-table` are not in the free release: they moved to a
+commercial SIMAI component package. Do not author them in a free project;
+use a Markdown table or another admitted component. Framework examples may use
+only components present in the site's lock.
+
+Declarative View Tree / `docara.shell` utilities must be names the bundled
+Framework defines (`resources/framework/view-utilities.json`), for example
+`border-bottom-1 border-bottom-solid` and `bg-surface-0`; old names are
+rewritten and recorded as `deprecated_utilities`, unknown names fail with
+`DECLARATIVE_VIEW_UTILITY_NOT_ALLOWED`.
+
+## Typed blocks added in 3.x
+
+- `:::hero` takes `padding=2xl` (fluid tall first screen) and a background
+  `effect` (catalogue id or an `effect.json` URL under the pinned catalogue)
+  with `effect_theme` (`auto`, `dark`, `light`) and `effect_settings`
+  (JSON in single quotes). It needs `docara.json` `effects.catalogue`; an
+  effect and `media=background` are refused together. A pause button
+  (WCAG 2.2.2) is rendered automatically.
+- In `:::features`, an `:icon[...]` placed first becomes the card icon; prefer
+  Material Symbols icons to raster images that only serve as icons.
+- `:::schema_reference` takes `fields=` (top-level fields, comma-separated)
+  to split a long settings table; an unknown field stops the build.
 
 ## Typed Document IR
 
@@ -161,7 +197,8 @@ Fail closed on:
 - incomplete transitive asset projection;
 - traversal, symlink, hardlink, case collision, unsafe file type, or arbitrary
   template path;
-- unsupported backend handlers, data binding, or effects.
+- unsupported backend handlers or data binding, and hero effects outside the
+  pinned `effects.catalogue`.
 
 Changing an engine-owned typed definition, bundled registry, Framework
 admission, or product schema is Docara engine development. Route that work to

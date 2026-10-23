@@ -6,8 +6,10 @@ user's language.
 
 This repository owns the installable `$docara` skill. It does not own the
 Docara product. Resolve current behavior from the target project's exact
-`simai/docara` installation and from `/Users/rim/Documents/GitHub/docara` when
-that checkout is the explicitly selected product source.
+`simai/docara` installation and from a local checkout of the product
+repository (`simai/docara`, normally a sibling `docara/` folder; read release
+tags, not an unrelated working branch) when that checkout is the explicitly
+selected product source.
 
 Do not use an older installed `$docara` skill to maintain this repository.
 Maintain the Hybrid Source of Truth instead:
@@ -24,7 +26,6 @@ this repository. Generated reports are evidence, not canonical skill sources.
 After meaningful source changes, run:
 
 ```bash
-python3 /Users/rim/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/docara
 python3 scripts/validate_skill_contract.py
 bash tests/smoke.sh
 ```

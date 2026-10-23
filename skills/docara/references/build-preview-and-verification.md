@@ -1,5 +1,7 @@
 # Build, preview, and verification
 
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{static-output,verify,local-preview}.md · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Preflight](#preflight)
@@ -13,7 +15,9 @@
 
 ## Preflight
 
-Run from the project root with the exact selected package:
+Run from the project root with the exact selected package. The build machine
+needs PHP 8.2+ with its extensions, Composer and Node.js 20+
+(`DOCARA_NODE_BINARY` when `node` is not on `PATH`):
 
 ```bash
 git status --short
@@ -65,7 +69,10 @@ Use only when:
 - build purpose, engine tree, and dependency tuple match;
 - topology, search, backlinks, atlas, schemas, locks, and registries remain
   valid for the accepted complete build;
-- the page is not a draft.
+- the page is not a draft;
+- `theme.color` did not change (`PORTABLE_INCREMENTAL_THEME_CHANGED`).
+
+After upgrading Docara, run one complete build before using `--page` again.
 
 Docara copies the accepted output into an atomic candidate, recompiles the
 selected route through the same `PageBuilder`, and preserves accepted global
@@ -83,28 +90,38 @@ release rollback strategy.
 
 ## Static output
 
-A production output normally contains:
+A production output normally contains (receipts live next to it, not inside):
 
 ```text
-build_production/
+build_production/                      # publish this folder as is
 ├── index.html or locale root redirects
+├── 404.html                           # unless not_found.enabled is false
 ├── <route>/index.html
-├── _docara/
-│   ├── search-index.json
-│   ├── search.js
-│   ├── component-catalog.json
-│   ├── framework/
-│   └── vendor/simai-framework/runtime/<revision>/
-└── .docara/
-    ├── resolved-page-plans.json
-    ├── redirects.json
-    ├── backlinks.json
-    ├── component-index.json
-    ├── design-atlas.json
-    ├── examples.json
-    ├── schema-reference.json
-    └── translation-status.json         # when tracking is enabled
+├── sitemap.xml, robots.txt, llms.txt  # only with site_url
+└── _docara/
+    ├── search-index.json, search.js
+    ├── docara-shell.<sha256>.css      # shared first-frame stylesheets
+    ├── docara-theme.<sha256>.css      # only with theme.color
+    ├── component-catalog.json
+    ├── framework/
+    └── vendor/                        # only the parts the pages use
+build_production.docara/               # receipts; never publish
+├── resolved-page-plans.json
+├── redirects.json
+├── locale-routes.json
+├── performance.json
+├── examples.json
+├── translation-publication.json       # with translation_tracking publish-current
+└── ...
 ```
+
+Shared assets are published once under `<base_url>_docara/`, not per locale
+prefix. Optional vendor parts (Mermaid, KaTeX, Rounded/Sharp icon faces, the
+Framework `utility.full.css`) are published only when a built page needs them;
+`verify-static` recomputes that choice (`@vendor-asset-selection`). A folder
+built by 3.0.0 kept receipts in `build_production/.docara/`; `verify-static`
+still reads it, takes `--receipts=DIR` for a deployed copy, and reports
+`@build-receipts-in-output` when both exist.
 
 Search files are emitted only when enabled. Assets are local and revisioned by
 hash. The static site must not rely on runtime CDN fallback.
@@ -129,8 +146,19 @@ or repair output. It checks:
 - search index/runtime and indexed-page contract;
 - redirect receipts, pages, canonicals, and targets;
 - component catalogue and Markdown ownership;
-- exact Framework and Smart asset projection;
+- exact Framework and Smart asset projection, shared shell stylesheets and
+  the optional theme stylesheet;
+- `sitemap.xml`, `robots.txt` and `llms.txt` when `site_url` is set, and
+  their absence in a portal build;
+- the `404.html` page like any other page;
 - missing, duplicate, symlinked, or hardlinked output.
+
+Each verifier marker and diagnostic code has a cause and a fix in the product
+documentation (Reference > Error codes); read it before guessing.
+
+The product repository also has `scripts/verify-page-weight.php <build-dir>`
+(page and image byte budgets). It is a maintainer script of the Docara
+checkout, not a `vendor/bin/docara` command.
 
 Never fix a verifier error inside `build_production`. Correct the owning
 Markdown, JSON, asset, lock, registry, or engine source and rebuild.

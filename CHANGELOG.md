@@ -1,6 +1,19 @@
 # Changelog
 
-## Unreleased
+## 0.5.0 - 2026-10-23
+
+- Moved the skill from Docara 2 to Docara 3 (checked against `v3.8.0`):
+  bundled SIMAI Framework release, Node.js 20+ build requirement, `init`
+  templates, receipts in `build_<environment>.docara/`, discovery files,
+  404 page, portal builds, site colour theme, hero effects, strict
+  translation publishing and the extended front matter list.
+- Added the manual 2.x -> 3.x migration route (Framework lock check, removed
+  `sf-admin-menu`/`sf-table`, environment variables, output differences).
+- Added freshness headers to every reference, a version re-check rule, the
+  "Чем навык не занимается" block, and the Mirai 2 CLI names.
+- Removed absolute local paths from README and AGENTS.
+
+## Unreleased (before 0.5.0)
 
 - Corrected the pre-manifest project transition: a missing `.docara/engine`
   now routes through reviewed `update --dry-run --adopt`, explicit apply and

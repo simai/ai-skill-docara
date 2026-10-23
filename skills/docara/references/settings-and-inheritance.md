@@ -1,5 +1,7 @@
 # Settings and inheritance
 
+> Источник: simai/docara (https://github.com/simai/docara): resources/schemas/{site,presentation}.schema.json, src/Content/FrontMatterParser.php, docs/site/content/ru/settings · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+
 ## Contents
 
 - [Resolution order](#resolution-order)
@@ -59,12 +61,15 @@ future default changes.
 
 Use for project-wide identity and topology:
 
-- site title and preset;
+- site title and preset (`docs` or `landing`);
 - content roots and locale registry/routing;
-- `base_url`, documentation version, and redirects file;
+- `base_url`, `site_url`, documentation version, and redirects file;
 - Framework lock and project Smart namespace;
 - global branding, layout, appearance, search, reading, and navigation defaults;
-- reader-preference registry.
+- reader-preference registry;
+- site-only families: `theme`, `discovery`, `not_found`, `effects`,
+  `portal`, `translation_tracking`, `documentation_tracking`, and
+  `branding.credit` (`BRANDING_CREDIT_SITE_ONLY` at other levels).
 
 ### Section: nearest `section.json`
 
@@ -91,9 +96,11 @@ Keep article prose in the Markdown owner. Do not duplicate content in JSON.
 
 ### Front matter
 
-Use only `title`, `description`, `tags`, `draft`, and `translation_key` in the
-current contract. `draft: true` prevents public publication and cannot be
-bypassed by a single-page build.
+Use only `title`, `description`, `tags`, `draft`, `noindex`,
+`translation_key`, `profile`, and `composition_recipe` (the exact list of
+the 3.8.0 parser). `draft: true` prevents public publication and cannot be
+bypassed by a single-page build. `noindex: true` publishes the page with
+`robots noindex` and keeps it out of the sitemap and `llms.txt`.
 
 ### Reader preferences
 
@@ -103,27 +110,47 @@ configuration provenance, or build receipts.
 
 ## Common setting families
 
-- `branding`: title, label, logo variants, favicon, mode, and size;
+- `branding`: title, label, `logo`/`logo_dark`, favicon, `share_image`,
+  `mode` (`full`, `compact`, `logo`, `text`; in `logo` mode the box keeps the
+  logo's proportions and `size` sets only its height), `size`, and the
+  site-only `credit` ("Made with Docara" line, on by default);
 - `layout`: admitted layout key, container width, content gap, scrollbar, and
   registered region composition;
-- `settings`: allowlisted theme, modal blur, and UI radius values;
+- `settings`: `theme` (`system`, `light`, `dark`), `modal_blur`, and
+  `ui_radius` (`default`, `medium`, `large`);
+- `theme`: site colours from one `color` (`#rgb`/`#rrggbb`) with optional
+  `hue` (0-360) and `chroma` (0-150); the build runs the bundled Framework
+  palette and links `_docara/docara-theme.<sha256>.css`;
+- `site_url` and `discovery` (`description`, `llms_links`): absolute
+  canonical/hreflang, share tags, `sitemap.xml`, `robots.txt`, `llms.txt`;
+- `not_found.enabled`: the built-in `404.html` (default on);
+- `effects` (`catalogue`, `index`, `index_sha256`): the pinned catalogue that
+  hero background effects need (`EFFECTS_CATALOGUE_REQUIRED`);
+- `portal` (`product`, `home_url`, `home_label`): build for one portal path;
 - `navigation`: hidden/order and validated header navigation;
 - `search`: search UI and per-page indexing;
 - `reading`: breadcrumbs, TOC, mobile TOC, depth, and previous/next;
 - `reader_preferences`: site-only registered preference groups/fields;
 - `locales` and `locale_routing`: site-only locale trees and public prefixes.
-- `translation_tracking`: site-only source locale, report mode, and root lock
-  filename; it does not change locale routing, fallback, or missing-page policy.
+- `translation_tracking`: site-only source locale, mode (`report`, or
+  `publish-current`, which publishes a target page only while its translation
+  is current and otherwise shows the source page under a notice), and root
+  lock filename; it does not change locale routing or missing-page policy.
 
 Configuration selects admitted IDs and data. It never selects a PHP class,
 callback, arbitrary template, renderer, or filesystem path.
+
+Settings tables in the product documentation (`:::schema_reference`) list
+each field with its default; Russian field descriptions ship in
+`resources/schema-descriptions/ru.json`. The installed schema stays the
+authority.
 
 ## Provenance
 
 After a build, inspect:
 
 ```text
-build_<environment>/.docara/resolved-page-plans.json
+build_<environment>.docara/resolved-page-plans.json
 ```
 
 For a route, use:
