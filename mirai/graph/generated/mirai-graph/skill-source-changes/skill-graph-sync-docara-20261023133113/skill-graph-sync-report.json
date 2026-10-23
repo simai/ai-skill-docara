@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.report",
+  "created_at": "2026-10-23T13:31:14.330029+00:00",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": "0567c5db73a66daee50e1f3c6a4c1a57b2bcad4f",
+  "base_commit": "0567c5db73a66daee50e1f3c6a4c1a57b2bcad4f",
+  "comparison_mode": "baseline_to_worktree",
+  "detector_fingerprint": "88d369d11edc3b347b914b2272f0c546e94afe324349426ddc2f3e7e2e296d32",
+  "status": "success",
+  "source_change_evidence_ref": "graph/generated/mirai-graph/skill-source-changes/skill-graph-sync-docara-20261023133113/skill-source-change-evidence.json",
+  "runtime_verify_ref": "mirai/manifest.lock.json",
+  "runtime_context_ref": "skills/docara/SKILL.md",
+  "federation_change_proposal_ref": "repo://ai-skill-graph/graph/generated/mirai-graph/federation-change/skill-graph-sync-docara-20261023133113-federation-proposal/federation-change-proposal.json",
+  "specialist_promotion_proposal_refs": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "blockers": [],
+  "canonical_write_allowed": false,
+  "sync_fingerprint": "ab6c40ae889235f77e20cf4eda30c4d14dd6efc0c29732c9def1653ceb99f520",
+  "task_sha256": "749f0d60887f5db4857ed590712206e5276f5144705df03b66c029e5bbdc3a84",
+  "task_bytes": 66
+}

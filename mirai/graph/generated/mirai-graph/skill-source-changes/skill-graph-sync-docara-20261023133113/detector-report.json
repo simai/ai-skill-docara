@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.skill-change.detect",
+  "created_at": "2026-10-23T13:31:13.915031+00:00",
+  "repo": "repo://ai-skill-docara",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": "0567c5db73a66daee50e1f3c6a4c1a57b2bcad4f",
+  "base_commit": "0567c5db73a66daee50e1f3c6a4c1a57b2bcad4f",
+  "comparison_mode": "baseline_to_worktree",
+  "git": {
+    "dirty": false,
+    "ahead": 2,
+    "head": "a696648"
+  },
+  "changed_files": [
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "60edb937b3ae22d99de31ca2dbfbcd5865a570ce260f32cd2a96988546e2d5cb",
+      "source_bytes": 10060,
+      "baseline_path": "skills/docara/SKILL.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "fc4e7a41c36b17fb2cd42fc27156d1e23d0c4f3e94985c65403f4dc18bb92406",
+      "baseline_bytes": 10054
+    },
+    {
+      "path": "skills/docara/references/content-locales-and-navigation.md",
+      "source_path": "references/content-locales-and-navigation.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "0d0c1f32e9aca055cace87ff8bdd4eeb94e47d96073eedd6a1f7c438c2c18240",
+      "source_bytes": 9789,
+      "baseline_path": "skills/docara/references/content-locales-and-navigation.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "ea18504143e138ce4120d62366dc12fab97e8c539f58d50adab1887804a7ce89",
+      "baseline_bytes": 9783
+    },
+    {
+      "path": "skills/docara/rules/skill-mesh-balance.md",
+      "source_path": "rules/skill-mesh-balance.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "148f958be6d4d3a8bba754d2b4a1ff578e69332249f7527eb5a5ca246a68e6d4",
+      "source_bytes": 2954,
+      "baseline_path": "skills/docara/rules/skill-mesh-balance.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "3b19e6a6edefb4733c4aac6c29bbaa66112e070cb06bf7b25c465b878075b86e",
+      "baseline_bytes": 2948
+    }
+  ],
+  "changed_skill_count": 1,
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "methodology",
+    "routing-impact"
+  ],
+  "detected_specialists": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "specialist_promotion_required": false,
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "blockers": [],
+  "status": "changed",
+  "detector_fingerprint": "88d369d11edc3b347b914b2272f0c546e94afe324349426ddc2f3e7e2e296d32"
+}

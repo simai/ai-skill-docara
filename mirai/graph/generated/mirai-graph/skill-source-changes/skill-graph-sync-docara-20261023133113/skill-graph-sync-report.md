@@ -2,6 +2,6 @@
 
 Status: success
 Required actions: evidence, federation-proposal, route-check, runtime-context
-Evidence: `graph/generated/mirai-graph/skill-source-changes/docara-engine-adoption-20260831/skill-source-change-evidence.json`
+Evidence: `graph/generated/mirai-graph/skill-source-changes/skill-graph-sync-docara-20261023133113/skill-source-change-evidence.json`
 
 Canonical write allowed: false
