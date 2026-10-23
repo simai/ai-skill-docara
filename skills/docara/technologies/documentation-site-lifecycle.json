@@ -5,6 +5,17 @@
   "owner": "skill.docara",
   "outcome": "Проект Docara получил минимальное полное изменение в собственных источниках (контент, настройки, компоненты, движок), собран, прошёл verify-static и HTTP-проверку затронутых маршрутов; публикация, если запрошена, выполнена отдельным шагом с $ops, бэкапом и откатом.",
   "lifecycle": "accepted",
+  "acceptance": {
+    "accepted_by": "AI review by Federation thread task-9654a45bb3c7477ab26c on the owner's decision",
+    "accepted_at": "2026-10-23",
+    "decision_ref": "owner decision 2026-10-23: re-accept technologies of 20.10 with a record",
+    "evidence": [
+      "контрактная проверка federation-skill-technology-contracts.py: структура навыка, маршрутизация примеров и пакеты технологии без замечаний; отметки outcome_evidence_* снимаются после Skill Sync",
+      "сводный прогон владельца: storage/outcome-runs/2026-10-20b/docara.json — ready, 8/8 PASS",
+      "источники: все 21 ссылок source_refs существуют; у каждой операции есть входы, выходы, проверки и условия остановки; сценарии ссылаются только на существующие операции",
+      "сверка с правилами навыка: operation.engine_upgrade (references/update-release-and-publication.md), operation.http_acceptance (references/build-preview-and-verification.md) — совпадают"
+    ]
+  },
   "version": "1.0.0",
   "source_refs": [
     "repo://ai-skill-docara/skills/docara/SKILL.md",
