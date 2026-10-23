@@ -228,5 +228,5 @@ HTML rather than editing redirect output.
    search, and fragment scenarios.
 
 Use `$docs` for documentation method and information architecture, `$content`
-for substantial editorial/localization work, `$seo` for public search
+for substantial editorial/localization work, `$marketing` for public search
 contracts, and `$tester` for acceptance evidence.

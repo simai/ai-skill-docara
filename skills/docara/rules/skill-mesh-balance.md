@@ -15,7 +15,7 @@ handoff.
 - `$content` owns large-scale writing, normalization, migration, localization,
   and content QA. `$docara` owns valid Markdown, route, locale, component, and
   build integration.
-- `$seo` owns public search visibility, canonical/title/H1/meta, structured
+- `$marketing` owns public search visibility, canonical/title/H1/meta, structured
   data, robots, and sitemap decisions. `$docara` owns available static fields,
   routes, canonicals, redirects, and verified output.
 - `$ux` owns reader journeys, hierarchy, discoverability, responsive behavior,
