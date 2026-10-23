@@ -124,7 +124,7 @@
   "entrypoint_digests": {
     "mirai/components": "sha256:0bcdf2e80057f6348dd29d4c6378308d1c60f894d6f3759694a2906d90f5e547",
     "mirai/context": "sha256:21df775001eec7208a9710460d39ff3d8c5afb6385b89e66b9211f4154242e50",
-    "mirai/graph": "sha256:244ab0eee1555d74f03876b373a6fbcf24ba5526a0a3690be02c20b1d1f70ac5",
+    "mirai/graph": "sha256:6e5854249fd34c8cdd8ed9b25b2f7e4ab9323c4344a3873ecf37372069e59189",
     "mirai/graph/ordering/objects.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/ordering/relations.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/specs/objects/capability-docara-build-preview-verification.json": "sha256:0b18059b17b757ce993dced66e25dd2aec4f92c7e5e8786137c497a468463f61",
@@ -194,5 +194,5 @@
   },
   "source_reference_digest": "sha256:8f63571ad06a430b4538300be42e4220d2a794ff08fc862eea9bb2558b0bcff6",
   "canonical_write_allowed": false,
-  "digest": "sha256:10a548d977be3aa7d94ca72b93ebaea824cb59cbd326989c349e2b8ff1a96f41"
+  "digest": "sha256:90f073de5e8853f821b8ffdc48f71e33996a727a71589ac0e99af1975e7e6317"
 }
