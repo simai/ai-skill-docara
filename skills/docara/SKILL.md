@@ -76,6 +76,7 @@ Executable technology: [documentation-site-lifecycle.json](./technologies/docume
 | Inspect registries, scaffold artifacts, validate, test, run QA, or use MCP | [developer-sdk-and-qa.md](./references/developer-sdk-and-qa.md) |
 | Update the engine, move a 2.x project to 3.x, prepare a package/release, or publish to a static host | [update-release-and-publication.md](./references/update-release-and-publication.md) |
 | Diagnose errors, ownership, paths, locks, links, assets, or security boundaries | [security-and-troubleshooting.md](./references/security-and-troubleshooting.md) |
+| Plan, write, restructure, audit, or accept a documentation set to the standard of the best public docs (Diátaxis map, page standards, benchmark, docs-only trial) | [documentation-quality-method.md](./references/documentation-quality-method.md) |
 
 Read [rules/skill-mesh-balance.md](./rules/skill-mesh-balance.md) when the task
 needs documentation, content, SEO, UX, QA, runtime, or release companions.

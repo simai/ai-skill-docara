@@ -22,12 +22,14 @@ EXPECTED_REFERENCES = {
     "developer-sdk-and-qa.md",
     "update-release-and-publication.md",
     "security-and-troubleshooting.md",
+    "documentation-quality-method.md",
 }
 EXPECTED_CAPABILITIES = {
     "capability.docara.build-preview-verification",
     "capability.docara.components-smart-design",
     "capability.docara.content-localization-navigation",
     "capability.docara.developer-sdk-qa",
+    "capability.docara.documentation-quality-method",
     "capability.docara.documentation_contour_build",
     "capability.docara.existing_contour",
     "capability.docara.project-lifecycle",

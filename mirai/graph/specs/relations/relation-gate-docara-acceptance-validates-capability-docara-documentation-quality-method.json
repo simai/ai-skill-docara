@@ -1,0 +1,19 @@
+{
+  "id": "relation-gate-docara-acceptance-validates-capability-docara-documentation-quality-method",
+  "schema_version": "1.0.0",
+  "kind": "relation",
+  "from": "gate.docara.acceptance",
+  "to": "capability.docara.documentation-quality-method",
+  "relation_type": "validates",
+  "status": "accepted",
+  "confidence": 0.9,
+  "confidence_method": "derived_from_framework_documentation_trials",
+  "evidence_status": "verified",
+  "impact": "high",
+  "owner": "docara",
+  "source_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/documentation-quality-method.md"
+  ],
+  "evidence_refs": []
+}

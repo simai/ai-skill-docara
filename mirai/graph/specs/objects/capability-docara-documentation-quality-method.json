@@ -1,0 +1,24 @@
+{
+  "id": "capability.docara.documentation-quality-method",
+  "schema_version": "1.0.0",
+  "kind": "capability",
+  "title": "Documentation quality method",
+  "summary": "Plans, writes, audits and accepts a Docara documentation set to the standard of the best public docs: Diátaxis coverage map, page standards, benchmark criteria and docs-only trials.",
+  "owner": "docara",
+  "lifecycle": "active",
+  "readiness": "pilot",
+  "confidence": 0.9,
+  "confidence_method": "derived_from_framework_documentation_trials",
+  "evidence_status": "verified",
+  "source_refs": [
+    "skills/docara/references/documentation-quality-method.md"
+  ],
+  "evidence_refs": [],
+  "tags": [
+    "docara",
+    "skill-runtime",
+    "capability",
+    "documentation-quality"
+  ],
+  "subtype": "domain_capability"
+}
