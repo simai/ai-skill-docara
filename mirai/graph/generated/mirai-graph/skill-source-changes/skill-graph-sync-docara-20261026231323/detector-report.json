@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "simai.skill-change.detect",
+  "created_at": "2026-10-26T23:13:23.946940+00:00",
+  "repo": "repo://ai-skill-docara",
+  "skill": "docara",
+  "owner": "docara",
+  "federation_control_plane": false,
+  "base": "aabba063923273eff89b209b7ed2d9fc901a5bf7",
+  "base_commit": "aabba063923273eff89b209b7ed2d9fc901a5bf7",
+  "comparison_mode": "baseline_to_worktree",
+  "git": {
+    "dirty": false,
+    "ahead": 2,
+    "head": "335e1a6"
+  },
+  "changed_files": [
+    {
+      "path": "scripts/validate_skill_contract.py",
+      "source_path": "scripts/validate_skill_contract.py",
+      "change_types": [
+        "routing-impact",
+        "runtime"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "0fa33215836b5804eae87451dedf362c6b5c74cb495411ef550bdc8315b9a56d",
+      "source_bytes": 9554,
+      "baseline_path": "scripts/validate_skill_contract.py",
+      "baseline_mode": "100644",
+      "baseline_sha256": "74c68a35a9b9e5dfb6784c0f5b95706e35365998e28c760b2e8dc3d12aed7e2a",
+      "baseline_bytes": 9461
+    },
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "39b787d62abb7320faf63c9276cc1a80a57705ed75f12e353623ffb2b4fbca5a",
+      "source_bytes": 10309,
+      "baseline_path": "skills/docara/SKILL.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "60edb937b3ae22d99de31ca2dbfbcd5865a570ce260f32cd2a96988546e2d5cb",
+      "baseline_bytes": 10060
+    },
+    {
+      "path": "skills/docara/references/documentation-quality-method.md",
+      "source_path": "references/documentation-quality-method.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "A",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "df8cb7fd081d2ab52eb4763a9010597a0cfffd2ca4b2c71e46ed99e694b3cdb2",
+      "source_bytes": 11450,
+      "baseline_path": "skills/docara/references/documentation-quality-method.md",
+      "baseline_mode": "not_present",
+      "baseline_sha256": "not_present",
+      "baseline_bytes": 0
+    }
+  ],
+  "changed_skill_count": 1,
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "methodology",
+    "routing-impact",
+    "runtime"
+  ],
+  "detected_specialists": [],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "specialist_promotion_required": false,
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "blockers": [],
+  "status": "changed",
+  "detector_fingerprint": "9d77f8c72e077f2fba43703a66517c78e9ead0424b775bd3dfed5827f47e7cc7"
+}
