@@ -10,7 +10,7 @@ turns Markdown, validated JSON, admitted design artifacts, and exact-pinned
 Smart components into a self-contained static site.
 
 The current product line is Docara 3 (Apache-2.0, `simai/docara:^3.0`; the
-references were checked against `v3.8.0`). It bundles a pinned SIMAI Framework
+references were checked against `v3.9.1`). It bundles a pinned SIMAI Framework
 release and needs PHP 8.2+, Composer and Node.js 20+ on the build machine only.
 Docara 2.x projects are legacy: move them to 3.x by the manual route in
 [update-release-and-publication.md](./references/update-release-and-publication.md#move-a-2x-project-to-3x).

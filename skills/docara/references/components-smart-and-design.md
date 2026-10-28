@@ -1,6 +1,6 @@
 # Components, Smart artifacts, and design composition
 
-> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/components, docs/site/content/ru/build/upgrade-3.md, resources/framework · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/components, docs/site/content/ru/build/upgrade-3.md, resources/framework · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
 
 ## Contents
 
@@ -72,6 +72,36 @@ rewritten and recorded as `deprecated_utilities`, unknown names fail with
   Material Symbols icons to raster images that only serve as icons.
 - `:::schema_reference` takes `fields=` (top-level fields, comma-separated)
   to split a long settings table; an unknown field stops the build.
+
+## Parameter vocabulary and code blocks (3.9)
+
+- One name means one thing in every block: `type` is a semantic status,
+  `variant` a style, `layout` an arrangement, `ratio` is always `a/b`,
+  `label` an accessible name, `title` a visible heading.
+- Renamed in 3.9.1 (old names still render for at least one minor release):
+  `:badge`/`:button` `type` → `variant`; `:::details`/`:::steps` `view` →
+  `layout`; `:::hero` `variant` → `layout`; `:::download` `name` → `title`,
+  `size` → `file_size`; `:::embed` `title` → `label`; attributed quote `url` →
+  `href`; `ratio=16x9` → `16/9`; `:::logos` `tone=normal` → `tone=default`.
+  `docara validate page <route>` reports each old use as the warning
+  `MARKDOWN_PARAMETER_DEPRECATED` with its line and replacement; the build
+  prints one summary line and never fails on it. Writing an old name next to
+  its new name is `MARKDOWN_COMPONENT_ATTRIBUTE_DUPLICATE`. Write new names.
+- Figure, media and embed share the ratio set `1/1`, `4/3`, `3/2`, `16/9`,
+  `21/9` (figure and image also `auto`).
+- Code fences take options after the language:
+  ```` ```php {title="app.php" highlight="1,4-6" numbers} ````; also
+  `numbers=42`, `focus`, `layout=terminal` (`$ ` lines are commands) and
+  comment markers `[!code ++]`, `[!code --]`, `[!code focus]`,
+  `[!code highlight]` (`[!!code ++]` shows a marker as text; `markdown`
+  fences keep markers). `` ```js{1,4-6} `` highlights lines.
+- `:::code {src=…}` selects part of a file with `lines`, `region=<name>`
+  (between `#region`/`#endregion` comments) or `start_after`/`end_before`,
+  plus `dedent=true`; it takes `highlight`, `focus` and `layout` too. Only one
+  selector at a time (`MARKDOWN_CODE_OPTIONS_CONFLICT`).
+- An unknown icon name in `:icon[...]` stops the build with
+  `CONTENT_COMPONENT_ICON_UNKNOWN` (file and line). Names in HTML examples and
+  Smart props are not checked.
 
 ## Typed Document IR
 

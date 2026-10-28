@@ -1,6 +1,6 @@
 # Documentation quality method
 
-Версия: Docara 3.10.0 (checked against the `simai/docara` 3.10 release line).
+> Источник: simai/docara (https://github.com/simai/docara): docs/site, docs/quality · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
 
 How to plan, write, audit and accept documentation built with Docara so that it
 meets the standard of the best public documentation (MDN, Stripe, Tailwind,

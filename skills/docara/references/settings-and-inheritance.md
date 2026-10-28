@@ -1,6 +1,6 @@
 # Settings and inheritance
 
-> Источник: simai/docara (https://github.com/simai/docara): resources/schemas/{site,presentation}.schema.json, src/Content/FrontMatterParser.php, docs/site/content/ru/settings · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+> Источник: simai/docara (https://github.com/simai/docara): resources/schemas/{site,presentation}.schema.json, src/Content/FrontMatterParser.php, docs/site/content/ru/settings · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
 
 ## Contents
 
@@ -98,7 +98,7 @@ Keep article prose in the Markdown owner. Do not duplicate content in JSON.
 
 Use only `title`, `description`, `tags`, `draft`, `noindex`,
 `translation_key`, `profile`, and `composition_recipe` (the exact list of
-the 3.8.0 parser). `draft: true` prevents public publication and cannot be
+the 3.9.1 parser). `draft: true` prevents public publication and cannot be
 bypassed by a single-page build. `noindex: true` publishes the page with
 `robots noindex` and keeps it out of the sitemap and `llms.txt`.
 

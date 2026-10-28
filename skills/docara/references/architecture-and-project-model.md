@@ -1,6 +1,6 @@
 # Architecture and project model
 
-> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site, resources/schemas, src · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site, resources/schemas, src · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
 
 ## Contents
 

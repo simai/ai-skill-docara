@@ -1,6 +1,6 @@
 # Content, locales, and navigation
 
-> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/authoring (markdown, localization, multilingual-site, search, redirects) · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/authoring (markdown, localization, multilingual-site, search, redirects) · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
 
 ## Contents
 
@@ -62,6 +62,20 @@ an editorial checklist. Docara reports deterministic facts; clarity,
 usefulness, audience fit, rationale and semantic completeness remain
 `review_required` for a person or external agent. Absence of the authoring file
 preserves legacy behavior.
+
+Since 3.9.0, when `docara.authoring.json` exists and a page gets no profile
+from front matter, a path rule or `default_profile`, `docara validate page`
+infers one: `index.md` is a landing page, a path segment such as `how-to/` or
+`reference/` names the type, three or more numbered steps make a how-to,
+tables/lists/definitions on 60% of lines make a reference, anything else is an
+article. The guess and its structural misses are advisory
+(`PAGE_PROFILE_INFERRED`); the build never fails on them. `"infer_profiles":
+false` switches inference off; explicit profiles always win.
+
+Front matter `tags` feed search: a tag match ranks below a title match and
+above heading and body matches. A tag may be lowercase letters of any
+script, digits, `.`, `_` and `-` (`tags: [деплой, i18n]`); uppercase and
+spaces fail with `FRONT_MATTER_TAG_INVALID`.
 
 ## Authoring rules
 

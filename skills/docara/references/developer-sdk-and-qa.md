@@ -1,6 +1,6 @@
 # Developer and AI SDK, preview, test, and QA
 
-> Источник: simai/docara (https://github.com/simai/docara): docs/site/content/ru/reference/cli.md, docs/site/content/ru/development/developer-sdk.md, tools/mcp-docara · Проверено: 2026-10-23 · Версия: 3.8.0 (тег v3.8.0, c0ee1e5a)
+> Источник: simai/docara (https://github.com/simai/docara): docs/site/content/ru/reference/cli.md, docs/site/content/ru/development/developer-sdk.md, tools/mcp-docara · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
 
 ## Contents
 
@@ -171,6 +171,31 @@ php vendor/bin/docara preview layout \
 Add `--watch` for PHP-only bounded dependency watching. Preview publishes an
 isolated production-path surface. It is not an accepted production receipt and
 must not be deployed as a site build.
+
+## Page templates, AGENTS.md and the quality report (3.9)
+
+- `docara scaffold page --type=how_to --title="..."` creates a page with the
+  sections of its type, a `description` placeholder, `profile` and
+  `draft: true`, in English or Russian after the locale. `--type` equals
+  `--profile`; `--locale` defaults to the default locale; without a route the
+  page goes into its type's directory. On the command line it is created in
+  one step; `--dry-run` keeps plan-and-apply (Smart and design scaffolds
+  always need it).
+- `docara init` writes `AGENTS.md` (project, page types and required parts,
+  writing rules, commands before finishing). An existing `AGENTS.md` is never
+  overwritten: the guide goes to `docs/AGENTS.docara.md`. The same standard is
+  `documentation_standard` in `docara capabilities --json` and the read-only
+  MCP tool `docara_authoring_standard`. AI contract version 1.2.0.
+- `docara qa report [--env=<env>] [--min-score=N] [--html]` scores a built site
+  0–100 offline: 27 `QUALITY_*` checks in six groups (completeness,
+  freshness, findability, readability, accessibility, links). `quality.min_score`
+  or `--min-score` fails the command below the threshold
+  (`QUALITY_SCORE_BELOW_MINIMUM`). `docara build` prints one quality line.
+- `docara qa review-packet [route]` writes the questions only a reader can
+  answer (accuracy, clarity, task fit, working examples) with page text,
+  profile, sources and findings into `build_<env>.docara/review-packets/`;
+  Docara never answers them. MCP: `docara_qa_report`,
+  `docara_qa_review_packet`.
 
 ## Structured QA
 
