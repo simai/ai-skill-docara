@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0.0",
+  "operation_id": "graph.skill-evolution.changed-source.evidence",
+  "created_at": "2026-10-28T10:48:11.461311+00:00",
+  "skill": "docara",
+  "repo": "repo://ai-skill-docara",
+  "base": "be3efe9cc08c3cb335b2c724dda93055e9b66404",
+  "base_commit": "be3efe9cc08c3cb335b2c724dda93055e9b66404",
+  "comparison_mode": "baseline_to_worktree",
+  "detector_fingerprint": "9d6c3029a1afabd59aac6624a52a31d8b329e968694c244db0e72883b2b1605d",
+  "detector_report_ref": "graph/generated/mirai-graph/skill-source-changes/skill-graph-sync-docara-20261028104811/detector-report.json",
+  "changed_files": [
+    {
+      "path": "skills/docara/SKILL.md",
+      "source_path": "SKILL.md",
+      "change_types": [
+        "capability",
+        "federation-impact",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": true,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "9829d2472f0eab2c86419937ce22089f1dad00ab0c13cce3f5da67f1d4b87996",
+      "source_bytes": 10309,
+      "baseline_path": "skills/docara/SKILL.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "39b787d62abb7320faf63c9276cc1a80a57705ed75f12e353623ffb2b4fbca5a",
+      "baseline_bytes": 10309
+    },
+    {
+      "path": "skills/docara/references/architecture-and-project-model.md",
+      "source_path": "references/architecture-and-project-model.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "d0a7280dee3d282971a911ad033459af5fdf3f9bb9d9c771ede260f8ad77041b",
+      "source_bytes": 7439,
+      "baseline_path": "skills/docara/references/architecture-and-project-model.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "96bcf7f01188954e222076ed6818d5b6f65986cfd239e8b6a9a4ce8c5dbb0a49",
+      "baseline_bytes": 7439
+    },
+    {
+      "path": "skills/docara/references/build-preview-and-verification.md",
+      "source_path": "references/build-preview-and-verification.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "a19a6e9f947d69425e2e87aa41b27e861a7d8fd03f5e135766db389263c4c8f5",
+      "source_bytes": 7691,
+      "baseline_path": "skills/docara/references/build-preview-and-verification.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "f9b75c54a211116ccb4808018946602630125d119b960226deee4e8e0b678fc5",
+      "baseline_bytes": 7691
+    },
+    {
+      "path": "skills/docara/references/components-smart-and-design.md",
+      "source_path": "references/components-smart-and-design.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "ef700d206e683883d3d9b53a794196ca540ebed2acb7b9fcdde32adb2bc43534",
+      "source_bytes": 10174,
+      "baseline_path": "skills/docara/references/components-smart-and-design.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "6aa991ed3394625dc97d1ad631a86723f6c4c704a986f532575c297e44df9bcd",
+      "baseline_bytes": 8272
+    },
+    {
+      "path": "skills/docara/references/content-locales-and-navigation.md",
+      "source_path": "references/content-locales-and-navigation.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "e855babb37fdfedf63d553eb2d1aff05342cf97711bb5d584c00f4292f2145c2",
+      "source_bytes": 10638,
+      "baseline_path": "skills/docara/references/content-locales-and-navigation.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "0d0c1f32e9aca055cace87ff8bdd4eeb94e47d96073eedd6a1f7c438c2c18240",
+      "baseline_bytes": 9789
+    },
+    {
+      "path": "skills/docara/references/developer-sdk-and-qa.md",
+      "source_path": "references/developer-sdk-and-qa.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "ab9db557b369fe6643d8c3a73905c10c8ff66e199139138e0a62a3757b266f0e",
+      "source_bytes": 10355,
+      "baseline_path": "skills/docara/references/developer-sdk-and-qa.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "8a4690ba88102995541635b5cc21bcaccf7eb63b1b1ee744df816df657e7140c",
+      "baseline_bytes": 8785
+    },
+    {
+      "path": "skills/docara/references/documentation-quality-method.md",
+      "source_path": "references/documentation-quality-method.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "ea925cbc6e10d7ac18d98f33feac2c84e024dd143ee292df75a96c54356d2a9c",
+      "source_bytes": 11541,
+      "baseline_path": "skills/docara/references/documentation-quality-method.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "df8cb7fd081d2ab52eb4763a9010597a0cfffd2ca4b2c71e46ed99e694b3cdb2",
+      "baseline_bytes": 11450
+    },
+    {
+      "path": "skills/docara/references/security-and-troubleshooting.md",
+      "source_path": "references/security-and-troubleshooting.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "f127e804f27fa016e589a9f1b601d72ad86a4450ad00418db71af7aa66447a25",
+      "source_bytes": 6758,
+      "baseline_path": "skills/docara/references/security-and-troubleshooting.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "1854ef8b3a2b16af1d11d010937318d80eab72cc2a7ad581173da0f2881d5123",
+      "baseline_bytes": 6758
+    },
+    {
+      "path": "skills/docara/references/settings-and-inheritance.md",
+      "source_path": "references/settings-and-inheritance.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "2acd8c986845708cde302389d4f78ddcb413e6971cbde1d2ae83d27261db186e",
+      "source_bytes": 6970,
+      "baseline_path": "skills/docara/references/settings-and-inheritance.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "0efddf429393c9ddf07c0c17a343e1de2977b35c96a013d1fd9b5af8ce4fe422",
+      "baseline_bytes": 6970
+    },
+    {
+      "path": "skills/docara/references/update-release-and-publication.md",
+      "source_path": "references/update-release-and-publication.md",
+      "change_types": [
+        "methodology",
+        "routing-impact"
+      ],
+      "routing_impact": true,
+      "federation_impact": false,
+      "status": "M",
+      "old_path": "",
+      "source_mode": "100644",
+      "source_sha256": "bbc4558bf6f2d37a4e06893d0a747b6e1b5b702c189ece1f7f9a88b2fa3c212c",
+      "source_bytes": 9277,
+      "baseline_path": "skills/docara/references/update-release-and-publication.md",
+      "baseline_mode": "100644",
+      "baseline_sha256": "41de31ad993a1a2f4644f0863d7031cf85b3ba49e4475146eae24ceeb0cb6912",
+      "baseline_bytes": 9268
+    }
+  ],
+  "change_types": [
+    "capability",
+    "federation-impact",
+    "methodology",
+    "routing-impact"
+  ],
+  "required_actions": [
+    "evidence",
+    "federation-proposal",
+    "route-check",
+    "runtime-context"
+  ],
+  "detected_specialists": [],
+  "route_check_required": true,
+  "federation_proposal_required": true,
+  "evidence_refs": [
+    "skills/docara/SKILL.md",
+    "skills/docara/references/architecture-and-project-model.md",
+    "skills/docara/references/build-preview-and-verification.md",
+    "skills/docara/references/components-smart-and-design.md",
+    "skills/docara/references/content-locales-and-navigation.md",
+    "skills/docara/references/developer-sdk-and-qa.md",
+    "skills/docara/references/documentation-quality-method.md",
+    "skills/docara/references/security-and-troubleshooting.md",
+    "skills/docara/references/settings-and-inheritance.md",
+    "skills/docara/references/update-release-and-publication.md"
+  ],
+  "canonical_write_allowed": false
+}
