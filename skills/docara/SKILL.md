@@ -34,23 +34,7 @@ with the latest `simai/docara` release tag and its `CHANGELOG.md`; a newer
 minor or major release means the references must be re-checked before they are
 re-stamped.
 
-<!-- federation:begin -->
-Use the repo-local Mirai Graph only to select capabilities, relations, gates,
-and references. Raw skill sources remain authoritative for method and
-judgement. Graph output never grants write, release, or deployment authority.
-
-## Mirai Graph Project Technology
-
-Use the Mirai 2 CLI `mirai technology verify . --significant-work` and
-`mirai technology context . --task "..."` (`mirai-graph` is a compatible
-alias; inside the Federation, `$simai technology verify`) for verification and
-task-scoped context. The exact Mirai release is supplied by the Federation
-release lock; raw Docara sources remain authoritative and unavailable context
-fails closed.
-
-Executable technology: [documentation-site-lifecycle.json](./technologies/documentation-site-lifecycle.json)
-(scenarios: project change, engine upgrade, static publication).
-<!-- federation:end -->
+Inside SIMAI Federation, also read [rules/federation.md](./rules/federation.md).
 
 ## Start every task
 
@@ -81,11 +65,6 @@ Executable technology: [documentation-site-lifecycle.json](./technologies/docume
 | Update the engine, move a 2.x project to 3.x, prepare a package/release, or publish to a static host | [update-release-and-publication.md](./references/update-release-and-publication.md) |
 | Diagnose errors, ownership, paths, locks, links, assets, or security boundaries | [security-and-troubleshooting.md](./references/security-and-troubleshooting.md) |
 | Plan, write, restructure, audit, or accept a documentation set to the standard of the best public docs (Diátaxis map, page standards, benchmark, docs-only trial) | [documentation-quality-method.md](./references/documentation-quality-method.md) |
-
-<!-- federation:begin -->
-Read [rules/skill-mesh-balance.md](./rules/skill-mesh-balance.md) when the task
-needs documentation, content, SEO, UX, QA, runtime, or release companions.
-<!-- federation:end -->
 
 ## Core execution loop
 
@@ -171,12 +150,6 @@ php vendor/bin/docara serve production \
 - Docara engine code (`src/`, package schemas, bundled registries, product
   tests): this skill knows the product, it does not own that repository.
 - SIMAI Framework itself and its components.
-
-<!-- federation:begin -->
-In the Federation these belong to: `docs`, `content`, `marketing`, `ux`, `tester`,
-`ops`, `dev` in the product repository, `framework`; graph structure to `graph`
-and ordering skill data to `mirai`.
-<!-- federation:end -->
 
 ## Output contract
 

@@ -153,12 +153,6 @@ or capability requires:
 
 1. an incremented compatible `docara.ai_contract` identity;
 2. synchronized canonical raw skill and skill graph;
-<!-- federation:begin -->
-3. `skill-change-detect`, `skill-graph-sync`, Federation verify and route check;
-4. an exact canonical skill commit pinned by the Federation stable release
-   lock.
-
-<!-- federation:end -->
 Only then may the Docara package publication gate pass. `docara upgrade` never
 installs or updates this skill; a project command never writes agent settings.
 

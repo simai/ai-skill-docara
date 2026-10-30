@@ -30,5 +30,10 @@ python3 scripts/validate_skill_contract.py
 bash tests/smoke.sh
 ```
 
+The skill is open: one folder serves people with and without the Federation.
+Keep what only the Federation needs in `skills/docara/rules/federation.md`, and
+run `python3 scripts/simai-skill-open-check.py --skill docara` in the Federation
+repository.
+
 Then use the active federation's Skill Sync Gate. Installing, enabling,
 committing, publishing, or releasing the skill requires separate authority.

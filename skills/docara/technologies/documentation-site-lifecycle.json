@@ -1,19 +1,19 @@
 {
   "schema_version": "1.0.0",
   "id": "technology.docara.documentation-site-lifecycle",
-  "title": "Изменение, обновление и публикация сайта документации Docara",
+  "title": "Change, upgrade and publish a Docara documentation site",
   "owner": "skill.docara",
-  "outcome": "Проект Docara получил минимальное полное изменение в собственных источниках (контент, настройки, компоненты, движок), собран, прошёл verify-static и HTTP-проверку затронутых маршрутов; публикация, если запрошена, выполнена отдельным шагом с $ops, бэкапом и откатом.",
+  "outcome": "The Docara project has the smallest complete change in its own sources (content, settings, components, engine), is built, and has passed verify-static and an HTTP check of the affected routes; publication, when requested, is a separate step with the site operator, a backup and a rollback.",
   "lifecycle": "accepted",
   "acceptance": {
-    "accepted_by": "AI review by Federation thread task-9654a45bb3c7477ab26c on the owner's decision",
+    "accepted_by": "AI review by a Federation thread on the owner's decision",
     "accepted_at": "2026-10-23",
     "decision_ref": "owner decision 2026-10-23: re-accept technologies of 20.10 with a record",
     "evidence": [
-      "контрактная проверка federation-skill-technology-contracts.py: структура навыка, маршрутизация примеров и пакеты технологии без замечаний; отметки outcome_evidence_* снимаются после Skill Sync",
-      "сводный прогон владельца: storage/outcome-runs/2026-10-20b/docara.json — ready, 8/8 PASS",
-      "источники: все 21 ссылок source_refs существуют; у каждой операции есть входы, выходы, проверки и условия остановки; сценарии ссылаются только на существующие операции",
-      "сверка с правилами навыка: operation.engine_upgrade (references/update-release-and-publication.md), operation.http_acceptance (references/build-preview-and-verification.md) — совпадают"
+      "contract check federation-skill-technology-contracts.py: skill structure, example routing and technology packages without findings; outcome_evidence_* marks are removed after Skill Sync",
+      "owner's summary run: storage/outcome-runs/2026-10-20b/docara.json — ready, 8/8 PASS",
+      "sources: all 21 source_refs exist; every operation has inputs, outputs, checks and stop conditions; scenarios refer only to existing operations",
+      "compared with the skill's rules: operation.engine_upgrade (references/update-release-and-publication.md), operation.http_acceptance (references/build-preview-and-verification.md) — they match"
     ]
   },
   "version": "1.0.0",
@@ -27,22 +27,22 @@
   "scenarios": [
     {
       "id": "scenario.project_change",
-      "title": "Изменение проекта документации",
-      "outcome": "Контент, навигация, настройки или компоненты изменены, сайт собран и проверен локально без публикации.",
+      "title": "Change a documentation project",
+      "outcome": "Content, navigation, settings or components are changed; the site is built and checked locally without publication.",
       "operation_ids": ["operation.project_intake", "operation.capability_handshake", "operation.source_change", "operation.build", "operation.static_verification", "operation.http_acceptance", "operation.handoff"],
       "required_inputs": ["input.user_outcome", "input.project_root"]
     },
     {
       "id": "scenario.engine_upgrade",
-      "title": "Обновление движка Docara",
-      "outcome": "Пакет и движок обновлены транзакционным upgrade (или явной адаптацией pre-manifest проекта), полная сборка и verify-static пройдены, путь отката подтверждён.",
+      "title": "Upgrade the Docara engine",
+      "outcome": "The package and engine are updated by a transactional upgrade (or an explicit adoption of a pre-manifest project), the full build and verify-static pass, and the rollback path is confirmed.",
       "operation_ids": ["operation.project_intake", "operation.capability_handshake", "operation.engine_upgrade", "operation.build", "operation.static_verification", "operation.http_acceptance", "operation.handoff"],
       "required_inputs": ["input.project_root", "input.target_package_version"]
     },
     {
       "id": "scenario.static_publication",
-      "title": "Изменение с публикацией на статический хостинг",
-      "outcome": "Проверенные байты сборки опубликованы атомарно через $ops с бэкапом и откатом; состояния сборки, проверки и публикации отчётны раздельно.",
+      "title": "Change and publish to static hosting",
+      "outcome": "The verified build bytes are published atomically by the site operator with a backup and a rollback; build, verification and publication are reported as separate states.",
       "operation_ids": ["operation.project_intake", "operation.capability_handshake", "operation.source_change", "operation.build", "operation.static_verification", "operation.http_acceptance", "operation.static_publication", "operation.handoff"],
       "required_inputs": ["input.user_outcome", "input.project_root", "input.live_authorization"]
     }
@@ -50,8 +50,8 @@
   "operations": [
     {
       "id": "operation.project_intake",
-      "title": "Найти проект и зафиксировать результат",
-      "summary": "Найти корень с docara.json, проверить git status и сохранить чужую работу, прочитать docara.json, корни локалей, ближайший section.json, sidecar страницы и Framework lock; свести запрос к одному основному результату и минимальному полному изменению.",
+      "title": "Find the project and fix the outcome",
+      "summary": "Find the root with docara.json, check git status and preserve others' work, read docara.json, locale roots, the nearest section.json, the page sidecar and the Framework lock; reduce the request to one main outcome and the smallest complete change.",
       "owner": "skill.docara",
       "prerequisites": [],
       "input_refs": ["input.user_outcome", "input.project_root"],
@@ -63,8 +63,8 @@
     },
     {
       "id": "operation.capability_handshake",
-      "title": "Прочитать контракт установленного пакета",
-      "summary": "Найти исполняемый файл проекта (vendor/bin/docara или точный checkout пакета), выполнить capabilities --json или документированный legacy-путь и сверить команды, схемы и типы с точной установленной версией.",
+      "title": "Read the installed package's contract",
+      "summary": "Find the project's executable (vendor/bin/docara or an exact package checkout), run capabilities --json or the documented legacy route, and compare commands, schemas and types with the exact installed version.",
       "owner": "skill.docara",
       "prerequisites": ["operation.project_intake"],
       "input_refs": ["evidence.project_scope"],
@@ -76,8 +76,8 @@
     },
     {
       "id": "operation.source_change",
-      "title": "Изменить собственные источники проекта",
-      "summary": "Проверить ID и поля по схеме, реестру или inspect и изменить только источники проекта: Markdown, front matter, docara.json, section.json, sidecar, lang.json, redirects.json, assets, examples, smart/ или design/; никогда не править build_*, .docara или пакетный движок.",
+      "title": "Change the project's own sources",
+      "summary": "Check IDs and fields against the schema, registry or inspect and change only project sources: Markdown, front matter, docara.json, section.json, sidecar, lang.json, redirects.json, assets, examples, smart/ or design/; never edit build_*, .docara or the packaged engine.",
       "owner": "skill.docara",
       "prerequisites": ["operation.capability_handshake"],
       "input_refs": ["evidence.authoritative_inputs", "evidence.package_capability_contract"],
@@ -89,8 +89,8 @@
     },
     {
       "id": "operation.engine_upgrade",
-      "title": "Обновить пакет и движок транзакционно",
-      "summary": "Выполнить upgrade --check, --dry-run и --apply по точному плану; для pre-manifest проекта сначала явная адаптация update --dry-run --adopt, --apply, --verify. Никогда не использовать init --update.",
+      "title": "Upgrade the package and engine transactionally",
+      "summary": "Run upgrade --check, --dry-run and --apply by the exact plan; for a pre-manifest project first adopt explicitly with update --dry-run --adopt, --apply, --verify. Never use init --update.",
       "owner": "skill.docara",
       "prerequisites": ["operation.capability_handshake"],
       "input_refs": ["input.target_package_version", "evidence.package_capability_contract"],
@@ -102,8 +102,8 @@
     },
     {
       "id": "operation.build",
-      "title": "Собрать сайт",
-      "summary": "Выбрать сборку: одна страница только для существующего маршрута после принятой полной сборки без изменения общего состояния; иначе полная production-сборка.",
+      "title": "Build the site",
+      "summary": "Choose the build: a single page only for an existing route after an accepted full build with no change to shared state; otherwise a full production build.",
       "owner": "skill.docara",
       "prerequisites": ["operation.capability_handshake"],
       "input_refs": ["evidence.changed_source_owners", "evidence.upgrade_result"],
@@ -115,8 +115,8 @@
     },
     {
       "id": "operation.static_verification",
-      "title": "Проверить статический вывод",
-      "summary": "Запустить verify-static на точном каталоге сборки; не ослаблять проверки обхода путей, ссылок, хешей и владения, чтобы сборка прошла.",
+      "title": "Verify the static output",
+      "summary": "Run verify-static on the exact build folder; do not weaken path traversal, link, hash or ownership checks to make a build pass.",
       "owner": "skill.docara",
       "prerequisites": ["operation.build"],
       "input_refs": ["evidence.build_output"],
@@ -128,8 +128,8 @@
     },
     {
       "id": "operation.http_acceptance",
-      "title": "Проверить проверенные байты по HTTP",
-      "summary": "Для видимых изменений отдать проверенную сборку через serve --no-build и проверить затронутые маршруты, навигацию, поиск, темы, адаптивность и клавиатуру; иначе записать, почему проверка не нужна.",
+      "title": "Check the verified bytes over HTTP",
+      "summary": "For visible changes serve the verified build with serve --no-build and check the affected routes, navigation, search, themes, responsiveness and keyboard use; otherwise record why the check is not needed.",
       "owner": "skill.docara",
       "prerequisites": ["operation.static_verification"],
       "input_refs": ["evidence.static_verification"],
@@ -141,8 +141,8 @@
     },
     {
       "id": "operation.static_publication",
-      "title": "Опубликовать статический сайт",
-      "summary": "Собрать с правильным base_url, скопировать только проверенные байты в версионированный staging, сверить дайджесты, проверить маршруты, ассеты, поиск и темы, затем атомарно переключить трафик через $ops с бэкапом, откатом и явным разрешением на live.",
+      "title": "Publish the static site",
+      "summary": "Build with the right base_url, copy only verified bytes to versioned staging, compare digests, check routes, assets, search and themes, then switch traffic atomically through the site operator with a backup, a rollback and explicit live authorization.",
       "owner": "skill.docara",
       "prerequisites": ["operation.http_acceptance"],
       "input_refs": ["evidence.browser_qa", "input.live_authorization"],
@@ -154,8 +154,8 @@
     },
     {
       "id": "operation.handoff",
-      "title": "Отчитаться о результате",
-      "summary": "Вернуть корень проекта и ревизию пакета, изменённых владельцев источников и область, выполненные команды, путь сборки и результат verify-static, покрытие QA и отдельно состояния релиза и публикации со следующим безопасным шагом.",
+      "title": "Report the result",
+      "summary": "Return the project root and package revision, the source owners changed and the scope, commands run, the build path and verify-static result, QA coverage, and separately the release and publication states with the next safe step.",
       "owner": "skill.docara",
       "prerequisites": ["operation.http_acceptance"],
       "input_refs": ["evidence.changed_source_owners", "evidence.static_verification", "evidence.browser_qa"],

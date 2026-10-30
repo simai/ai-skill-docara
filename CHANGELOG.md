@@ -3,8 +3,9 @@
 ## 0.6.0 - 2026-10-30
 
 - Open skill: Agent Skills format with `license` and `compatibility`, English
-  throughout, Apache-2.0, works without SIMAI Federation; Federation-only text
-  is marked `federation:begin`/`federation:end`.
+  throughout, Apache-2.0, works with or without SIMAI Federation; what only the
+  Federation needs moved to `rules/federation.md`. Russian remains only in test
+  requests under `quality/` and routing words, which check Russian requests.
 
 ## 0.5.0 - 2026-10-23
 

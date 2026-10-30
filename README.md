@@ -23,9 +23,9 @@ verification receipts. It covers:
 The skill follows the open [Agent Skills](https://agentskills.io/specification)
 format and is licensed under Apache-2.0. It works without any other tooling:
 copy `skills/docara` into your agent's skills folder (for example
-`~/.claude/skills/docara` or `~/.codex/skills/docara`). Sections marked
-`federation:begin`/`federation:end` and the folders `technologies/`, `quality/`,
-`rules/` and `repository-recipes/` only serve SIMAI Federation and can be ignored.
+`~/.claude/skills/docara` or `~/.codex/skills/docara`). `rules/federation.md` and the
+folders `technologies/`, `quality/` and `repository-recipes/` only serve SIMAI
+Federation and can be ignored.
 
 The installable entry point is [skills/docara/SKILL.md](skills/docara/SKILL.md).
 The compact capability graph is [mirai/graph/specs/index.json](mirai/graph/specs/index.json).
