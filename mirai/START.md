@@ -5,7 +5,7 @@
 - Kind: `project`
 - Mirai: `>=2.1.0-alpha <3.0.0`
 - Project manifest contract: `1.0.0`
-- Lock digest: `sha256:634af1e27607cb2f474180b55a662287f4aee87dafee36822dc50840ac9f5833`
+- Lock digest: `sha256:afff640cc6b4fb2afda44e98a1e0c7457a805194ffdd8b64988e23facfaa16c4`
 - Profiles: `skill_runtime`
 
 ## Boundaries
