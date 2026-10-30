@@ -124,7 +124,7 @@
   "entrypoint_digests": {
     "mirai/components": "sha256:0bcdf2e80057f6348dd29d4c6378308d1c60f894d6f3759694a2906d90f5e547",
     "mirai/context": "sha256:21df775001eec7208a9710460d39ff3d8c5afb6385b89e66b9211f4154242e50",
-    "mirai/graph": "sha256:f9f1a1cb049ca9377fc5d6dd519f94668e312aaa3b4ba858a86efc0785b0aef1",
+    "mirai/graph": "sha256:110d2bbcef0cddb225a0d8ae0560171250dbacc5f9e08bfb78bbf3585c558590",
     "mirai/graph/ordering/objects.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/ordering/relations.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/specs/objects/capability-docara-build-preview-verification.json": "sha256:0b18059b17b757ce993dced66e25dd2aec4f92c7e5e8786137c497a468463f61",
@@ -194,5 +194,5 @@
   },
   "source_reference_digest": "sha256:8f63571ad06a430b4538300be42e4220d2a794ff08fc862eea9bb2558b0bcff6",
   "canonical_write_allowed": false,
-  "digest": "sha256:37c54a220a3aeb41f48bea95c34275a1856d8fc4ecbeff386d5b36fdd0ba14d1"
+  "digest": "sha256:3faaef0a3355b8ede1d7fa7686e1e56629d0239e8dadb2d12a746222c599a863"
 }
