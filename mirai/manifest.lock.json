@@ -124,7 +124,7 @@
   "entrypoint_digests": {
     "mirai/components": "sha256:0bcdf2e80057f6348dd29d4c6378308d1c60f894d6f3759694a2906d90f5e547",
     "mirai/context": "sha256:21df775001eec7208a9710460d39ff3d8c5afb6385b89e66b9211f4154242e50",
-    "mirai/graph": "sha256:b167271a5f40b5e43e4a7bdd679e02d260c9adb16e71f71354b1dceb511734eb",
+    "mirai/graph": "sha256:dbf4d26d794a59689adf02c79920d8bd57cd478a32b9991c9d8190e5cd18ab2f",
     "mirai/graph/ordering/objects.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/ordering/relations.json": "sha256:37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
     "mirai/graph/specs/objects/capability-docara-build-preview-verification.json": "sha256:0b18059b17b757ce993dced66e25dd2aec4f92c7e5e8786137c497a468463f61",
@@ -135,10 +135,10 @@
     "mirai/graph/specs/objects/capability-docara-security-troubleshooting.json": "sha256:45f862ec84a2ed608b17dc14911572a4320d4df98a54b8e7685b6fbaca781412",
     "mirai/graph/specs/objects/capability-docara-settings-inheritance.json": "sha256:b0434ff238b1ac11e3bba2a2c371a26cb144efcc9a92c99d617182d404e853c1",
     "mirai/graph/specs/objects/capability-docara-update-release-publication.json": "sha256:8c0c1f322a35ed0351f5f5abe05be7136b514d1d3b83394daac6abcb312b4857",
-    "mirai/graph/specs/objects/capability-map-capability-docara-documentation-contour-build.json": "sha256:09664214d1ea556f49a73f1420d2306b6ca8a63b7db76bba479ff362bffc632e",
-    "mirai/graph/specs/objects/capability-map-capability-docara-existing-contour.json": "sha256:42c75e3a7a12cf56d241db545a9f46c9404ff89bd9c5974dc8a7cc9fe60a6b0b",
-    "mirai/graph/specs/objects/capability-map-capability-docara-runtime-reference-diagnosis.json": "sha256:b60c63ab52f58aa6ba7ec473f40e7adc227b18f0da0094ef72806b36edf9ef5b",
-    "mirai/graph/specs/objects/capability-map-capability-docara-source-backed-documentation-tracking.json": "sha256:3a5f4cc9c47593ced145e65ead75b6f4080583bd557a0606e265bc8a16752fe7",
+    "mirai/graph/specs/objects/capability-map-capability-docara-documentation-contour-build.json": "sha256:ccd08ea10549b34df6c38284a179e3e9fd95e76a6430c9f219b1fa37f4fb305c",
+    "mirai/graph/specs/objects/capability-map-capability-docara-existing-contour.json": "sha256:a75e75186e8752cc84c9fdd5eb46142b60fceab0d7ff2a901b78a8ec246bc922",
+    "mirai/graph/specs/objects/capability-map-capability-docara-runtime-reference-diagnosis.json": "sha256:0eec9459e361aa3ab43b133a1016f21bdcb032becf3ecb3013e3d18e85c03676",
+    "mirai/graph/specs/objects/capability-map-capability-docara-source-backed-documentation-tracking.json": "sha256:8cd280eb87350f87b1875cb95380079b252d8a18318ed69dab7ed855160b5164",
     "mirai/graph/specs/objects/capability-map-constraint-docara-capability-map-boundary.json": "sha256:2ecdd5b8dc100026f22bd13c17d97f33b25a3aee0d2524f9d1d4f3b8702a91e1",
     "mirai/graph/specs/objects/capability-map-gate-docara-capability-map-conformance.json": "sha256:eaa0678320ff525c1e35ff916b2768ff839c5bd25b1d3f29ae3e8d5dde977205",
     "mirai/graph/specs/objects/capability-map-source-docara-architecture-and-project-model-md-c56846a2a33f.json": "sha256:d4d673d19fe24510142bd2f5034cf41773d85b94b099ba62c1ffb180187af84c",
@@ -194,5 +194,5 @@
   },
   "source_reference_digest": "sha256:8f63571ad06a430b4538300be42e4220d2a794ff08fc862eea9bb2558b0bcff6",
   "canonical_write_allowed": false,
-  "digest": "sha256:bb6a45e19767731ca1ad0e8c40bdfd92292573c1f5c28fbd6dafc577ec4d081a"
+  "digest": "sha256:f649fc0863f887ec106753f7b3c88064f9af749e7300773c3b8877faad806c2a"
 }
