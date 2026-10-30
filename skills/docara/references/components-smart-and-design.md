@@ -1,6 +1,6 @@
 # Components, Smart artifacts, and design composition
 
-> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/components, docs/site/content/ru/build/upgrade-3.md, resources/framework · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/components, docs/site/content/ru/build/update.md, resources/framework · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -13,6 +13,7 @@
 - [Project-owned Smart](#project-owned-smart)
 - [Design composition](#design-composition)
 - [Admission and safety](#admission-and-safety)
+- [Parameter vocabulary and code blocks (after 3.9.1)](#parameter-vocabulary-and-code-blocks-after-391)
 
 ## Selection ladder
 
@@ -73,12 +74,16 @@ rewritten and recorded as `deprecated_utilities`, unknown names fail with
 - `:::schema_reference` takes `fields=` (top-level fields, comma-separated)
   to split a long settings table; an unknown field stops the build.
 
-## Parameter vocabulary and code blocks (3.9)
+## Parameter vocabulary and code blocks (after 3.9.1)
+
+This section describes the next release: 3.9.1 does not have these renames, warnings
+or code options. Check `php vendor/bin/docara --version`, and on 3.9.1 keep the old
+names (`:badge{type=}`, `:::download {name size}`, `:::hero {variant}`).
 
 - One name means one thing in every block: `type` is a semantic status,
   `variant` a style, `layout` an arrangement, `ratio` is always `a/b`,
   `label` an accessible name, `title` a visible heading.
-- Renamed in 3.9.1 (old names still render for at least one minor release):
+- Renamed (old names still render for at least one minor release):
   `:badge`/`:button` `type` → `variant`; `:::details`/`:::steps` `view` →
   `layout`; `:::hero` `variant` → `layout`; `:::download` `name` → `title`,
   `size` → `file_size`; `:::embed` `title` → `label`; attributed quote `url` →
@@ -138,7 +143,7 @@ Use either `id` or inline fenced sources, never both. Keep shared demonstration
 copy in English unless the project has an explicit example-localization
 contract. A full build emits only existing source tabs, confines and copies
 allowed assets relative to `base_url`, and records hashes, consumers, and
-outputs in `.docara/examples.json`. Any shared-example change requires a full
+outputs in `build_<environment>.docara/examples.json`. Any shared-example change requires a full
 build; do not bypass the single-page receipt guard.
 
 Never use traversal, absolute source paths, symlinks, hardlinks, case-colliding

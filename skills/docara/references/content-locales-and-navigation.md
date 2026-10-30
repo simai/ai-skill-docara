@@ -1,6 +1,6 @@
 # Content, locales, and navigation
 
-> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/authoring (markdown, localization, multilingual-site, search, redirects) · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/authoring (markdown, multilingual-site, redirects), docs/site/content/ru/settings/search.md · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -13,6 +13,7 @@
 - [Navigation and reading context](#navigation-and-reading-context)
 - [Redirects](#redirects)
 - [Content workflow](#content-workflow)
+- [Optional page authoring profiles](#optional-page-authoring-profiles)
 
 ## Markdown ownership
 
@@ -51,7 +52,7 @@ from `<locale>/404/`.
 ## Optional page authoring profiles
 
 An optional root `docara.authoring.json` may declare audiences, one default
-profile, and path-to-profile rules. It must not store pages, versions, hashes,
+profile, path-to-profile rules, and `quality` settings for `docara qa report`. It must not store pages, versions, hashes,
 translation state, catalog copies, or editorial prose. Profile precedence is:
 page front matter, matching path rule, then default. Conflicting matching rules
 are an error.
@@ -152,8 +153,8 @@ count as a completed translation.
 Preserve code fences and their contents, URLs, component IDs and attributes,
 table/list shape, and heading levels while translating. Resolve
 `duplicate_key` and `structure_mismatch` before acceptance. Leave ambiguous
-`missing`/`orphan` pages visible as blockers or add a reviewed exclusion with a
-specific reason.
+`missing`/`orphan` pages visible as blockers or add a reviewed exclusion with
+`--exclude-reason` and a specific reason.
 
 After checking the translation, create and apply an exact plan:
 
@@ -193,7 +194,7 @@ Read `documentation status` before creating or updating reference material.
 Treat `new`, `changed`, `missing_example`, `unverified`, and `orphan` as an
 explicit work queue. One page may document several entities, but every required
 example case must map to a concrete reusable Example ID. Leave ambiguous
-relations visible; exclusions require a specific reviewed reason.
+relations visible; exclusions require `--exclude-reason` with a specific reviewed reason.
 
 ## Navigation and reading context
 

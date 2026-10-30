@@ -8,7 +8,7 @@
       "id": "docara.documentation_contour_build",
       "aliases": [
         "Docara build",
-        "документационный контур"
+        "documentation site"
       ],
       "user_outcome": "Build a Docara documentation contour from canonical project sources without duplicating the source of truth.",
       "readiness": "ready",
@@ -42,13 +42,13 @@
       "discovery": {
         "intent_signals": [
           "Docara build",
-          "документационный контур",
+          "documentation site",
           "docara.documentation_contour_build",
           "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
         ],
         "requirement_signals": [
           "Docara build",
-          "документационный контур",
+          "documentation site",
           "docara.documentation_contour_build",
           "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
         ],
@@ -92,9 +92,9 @@
       "aliases": [
         "Docara contour",
         "docara contour",
-        "документационный контур"
+        "documentation site"
       ],
-      "user_outcome": "Расширение существующего документационного контура",
+      "user_outcome": "Extend an existing documentation site",
       "readiness": "ready",
       "canonical_source_refs": [
         "references/architecture-and-project-model.md"
@@ -124,16 +124,16 @@
         "intent_signals": [
           "Docara contour",
           "docara contour",
-          "документационный контур",
+          "documentation site",
           "docara.existing_contour",
-          "Расширение существующего документационного контура"
+          "Extend an existing documentation site"
         ],
         "requirement_signals": [
           "Docara contour",
           "docara contour",
-          "документационный контур",
+          "documentation site",
           "docara.existing_contour",
-          "Расширение существующего документационного контура"
+          "Extend an existing documentation site"
         ],
         "project_signals": [
           "docara"
@@ -148,7 +148,7 @@
       },
       "coverage": {
         "provides": [
-          "Расширение существующего документационного контура"
+          "Extend an existing documentation site"
         ],
         "does_not_provide": [
           "Capabilities outside the declared owner boundary"
@@ -174,7 +174,7 @@
       "id": "docara.runtime_reference_diagnosis",
       "aliases": [
         "missing refs",
-        "диагностика ссылок"
+        "runtime reference diagnosis"
       ],
       "user_outcome": "Report every missing runtime reference explicitly and never return a false-green pack.",
       "readiness": "ready",
@@ -208,13 +208,13 @@
       "discovery": {
         "intent_signals": [
           "missing refs",
-          "диагностика ссылок",
+          "runtime reference diagnosis",
           "docara.runtime_reference_diagnosis",
           "Report every missing runtime reference explicitly and never return a false-green pack."
         ],
         "requirement_signals": [
           "missing refs",
-          "диагностика ссылок",
+          "runtime reference diagnosis",
           "docara.runtime_reference_diagnosis",
           "Report every missing runtime reference explicitly and never return a false-green pack."
         ],
@@ -257,7 +257,7 @@
       "id": "docara.source_backed_documentation_tracking",
       "aliases": [
         "documentation tracking",
-        "актуальность документации по коду"
+        "documentation tracking against code"
       ],
       "user_outcome": "Track pages and reusable examples against a project-owned public API contract without duplicating its registry.",
       "readiness": "ready",
@@ -291,7 +291,7 @@
       "discovery": {
         "intent_signals": [
           "documentation tracking",
-          "актуальность документации по коду",
+          "documentation tracking against code",
           "docara.source_backed_documentation_tracking"
         ],
         "requirement_signals": [

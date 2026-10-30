@@ -62,7 +62,7 @@ Inside SIMAI Federation, also read [rules/federation.md](./rules/federation.md).
 | Use inline or reusable examples; native, typed, container, Framework, Docara, or project Smart components | [components-smart-and-design.md](./references/components-smart-and-design.md) |
 | Build one page or the full site, preview, serve, or verify output | [build-preview-and-verification.md](./references/build-preview-and-verification.md) |
 | Inspect registries, scaffold artifacts, validate, test, run QA, or use MCP | [developer-sdk-and-qa.md](./references/developer-sdk-and-qa.md) |
-| Update the engine, move a 2.x project to 3.x, prepare a package/release, or publish to a static host | [update-release-and-publication.md](./references/update-release-and-publication.md) |
+| Update the engine, move a 2.x project to 3.x, or publish to a static host | [update-release-and-publication.md](./references/update-release-and-publication.md) |
 | Diagnose errors, ownership, paths, locks, links, assets, or security boundaries | [security-and-troubleshooting.md](./references/security-and-troubleshooting.md) |
 | Plan, write, restructure, audit, or accept a documentation set to the standard of the best public docs (Diátaxis map, page standards, benchmark, docs-only trial) | [documentation-quality-method.md](./references/documentation-quality-method.md) |
 
@@ -133,6 +133,7 @@ php vendor/bin/docara serve production \
   manifest/provider/lock/registry contract.
 - Never pass PHP classes, callbacks, executable hooks, arbitrary template
   paths, raw project CSS, or unsafe filesystem paths through content/config.
+  The only commands config may run are `page_transforms` in `docara.json`.
 - Never weaken traversal, symlink, hardlink, ownership, namespace, schema,
   hash, slot, prop, or static-output checks to make a build pass.
 - Keep secrets and private content out of source and static output.

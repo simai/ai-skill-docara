@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 - 2026-10-30
+
+- Revision against Docara v3.9.1: post-3.9.1 parameters and code options are marked
+  as the next release; corrected navigation, receipts, portal, QA, settings and
+  source references; `page_transforms` documented; internal release and hosting
+  notes removed from the public text; Russian leftovers translated.
+
+
 ## 0.6.0 - 2026-10-30
 
 - Open skill: Agent Skills format with `license` and `compatibility`, English
@@ -17,7 +25,7 @@
 - Added the manual 2.x -> 3.x migration route (Framework lock check, removed
   `sf-admin-menu`/`sf-table`, environment variables, output differences).
 - Added freshness headers to every reference, a version re-check rule, the
-  "Чем навык не занимается" block, and the Mirai 2 CLI names.
+  non-scope block, and the Mirai 2 CLI names.
 - Removed absolute local paths from README and AGENTS.
 
 ## Unreleased (before 0.5.0)

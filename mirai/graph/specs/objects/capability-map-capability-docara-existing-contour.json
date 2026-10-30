@@ -2,7 +2,7 @@
   "aliases": [
     "Docara contour",
     "docara contour",
-    "документационный контур"
+    "documentation site"
   ],
   "applicability": {
     "editions": [],
@@ -28,6 +28,6 @@
     "skills/docara/references/architecture-and-project-model.md"
   ],
   "subtype": "owner_capability_map_entry",
-  "summary": "Расширение существующего документационного контура",
-  "title": "Расширение существующего документационного контура"
+  "summary": "Extend an existing documentation site",
+  "title": "Extend an existing documentation site"
 }

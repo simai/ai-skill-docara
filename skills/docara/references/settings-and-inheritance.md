@@ -1,6 +1,6 @@
 # Settings and inheritance
 
-> Source: simai/docara (https://github.com/simai/docara): resources/schemas/{site,presentation}.schema.json, src/Content/FrontMatterParser.php, docs/site/content/ru/settings · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): resources/schemas/{site,presentation}.schema.json, src/Content/FrontMatterParser.php, docs/site/content/ru/settings · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -71,6 +71,9 @@ Use for project-wide identity and topology:
   `portal`, `translation_tracking`, `documentation_tracking`, and
   `branding.credit` (`BRANDING_CREDIT_SITE_ONLY` at other levels).
 
+`page_transforms` (site scope, up to eight) lists commands run over the written
+site before Docara measures it; each gets the site's directory as its last argument.
+
 ### Section: nearest `section.json`
 
 Use for one branch and its descendants:
@@ -78,8 +81,8 @@ Use for one branch and its descendants:
 - branch title or preset;
 - branding and layout overrides;
 - regions and composition;
-- navigation visibility/order defaults;
-- search and reading behavior.
+- navigation visibility/order defaults and `header_navigation`;
+- search, reading, `code` and `examples` behavior.
 
 Do not place content roots, locale registry, `base_url`, documentation version,
 redirects file, Framework lock, or project namespace at section scope.
@@ -89,8 +92,8 @@ redirects file, Framework lock, or project namespace at section scope.
 Use for one route:
 
 - title, description, slug, and locale where supported;
-- page-level presentation, layout, region, navigation, search, and reading
-  overrides.
+- page-level presentation, layout, region, navigation, `header_navigation`,
+  search, reading, `code` and `examples` overrides.
 
 Keep article prose in the Markdown owner. Do not duplicate content in JSON.
 

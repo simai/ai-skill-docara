@@ -1,12 +1,11 @@
 # Documentation quality method
 
-> Source: simai/docara (https://github.com/simai/docara): docs/site, docs/quality · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): docs/site, src/Authoring · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 How to plan, write, audit and accept documentation built with Docara so that it
 meets the standard of the best public documentation (MDN, Stripe, Tailwind,
-Vue, Bootstrap, Laravel). The method was worked out on the SIMAI Framework
-documentation (ui-doc): a Diátaxis coverage map, a reference page standard, a
-benchmark and six rounds of docs-only trials with graded solutions. Use it for
+Vue, Bootstrap, Laravel). The method is a Diátaxis coverage map, a reference page standard, a
+benchmark and docs-only trials with graded solutions. Use it for
 any Docara site, including Docara's own documentation.
 
 Read this when the task is to write a documentation set, restructure one,
@@ -46,9 +45,9 @@ Rules:
   a reference page does not teach.
 - The navigation shows the kinds: a "Getting started" path of tutorials, guide
   sections of how-to and explanation pages, a "Reference" group of reference pages.
-  In Docara, group sections under header items with
-  `header_navigation.items[].sections` and keep the sidebar to one section
-  (`navigation.scope` defaults to `section` when a header menu exists).
+  In Docara, list the sections as `header_navigation` items (`id`, `label`,
+  `href`) and keep the sidebar to one section with `navigation.scope=section`
+  (the default is `site`).
 - First success in under 15 minutes: the quick start is its own page, starts
   from an empty folder, uses real versions (no placeholders the reader must
   look up elsewhere) and ends with a visible result.
@@ -103,7 +102,7 @@ how-to and reference that act on it. Diagrams for flows and layers.
 
 ## 4. Language
 
-- Russian site copy: plain words, present tense, active voice, the reader as
+- Site copy, in the language of the site: plain words, present tense, active voice, the reader as
   "you". One idea per sentence; sentences under ~25 words (Docara's quality
   report flags longer ones).
 - No history or plans in pages: no "previously", "now", "in the new version",

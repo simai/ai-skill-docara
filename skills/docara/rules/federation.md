@@ -33,7 +33,10 @@ and ordering skill data to `mirai`.
 
 ## Release gate for this skill
 
-A changed command, safety sequence, ownership rule or capability of Docara also needs:
+Compare the new public AI contract with the previous release. Internal changes
+may reuse the current skill. A changed command, safety sequence, ownership rule
+or capability needs an incremented compatible `docara.ai_contract` identity, a
+synchronized raw skill and skill graph, and:
 
 1. `skill-change-detect`, `skill-graph-sync`, Federation verify and route check;
 2. an exact canonical skill commit pinned by the Federation stable release

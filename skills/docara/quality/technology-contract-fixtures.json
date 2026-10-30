@@ -5,7 +5,7 @@
   "positive_cases": [
     {
       "id": "docara.paraphrase.ru",
-      "task": "Используй $docara. Выполни типовую задачу владельца docara в синтетическом проекте.",
+      "task": "Use $docara. Do a typical docara task in a synthetic project.",
       "expected_process_model_id": "docara_documentation_site_publication",
       "expected_executable_technology_scenario_id": "scenario.project_change"
     },
@@ -23,7 +23,7 @@
     },
     {
       "id": "docara.engine_upgrade.ru",
-      "task": "Используй $docara. Обнови движок Docara в проекте документации до новой версии пакета и пересобери сайт.",
+      "task": "Use $docara. Upgrade the Docara engine in a documentation project to a new package version and rebuild the site.",
       "expected_process_model_id": "docara_documentation_site_publication",
       "expected_executable_technology_scenario_id": "scenario.engine_upgrade"
     },
@@ -35,7 +35,7 @@
     },
     {
       "id": "docara.static_publication.ru",
-      "task": "Используй $docara. Внеси правку в документацию, пересобери сайт и опубликуй его на статический хостинг через $ops с бэкапом и откатом.",
+      "task": "Use $docara. Change the documentation, rebuild the site and publish it to static hosting through $ops with a backup and a rollback.",
       "expected_process_model_id": "docara_documentation_site_publication",
       "expected_executable_technology_scenario_id": "scenario.static_publication"
     }
@@ -43,7 +43,7 @@
   "negative_cases": [
     {
       "id": "docara.owner_boundary",
-      "task": "Используй $dev для точечного backend bugfix в существующем API.",
+      "task": "Use $dev for a narrow backend bugfix in an existing API.",
       "expected_primary_skill": "dev"
     }
   ],
@@ -51,7 +51,7 @@
     {
       "id": "docara.documentation_contour_build.outcome",
       "capability_id": "docara.documentation_contour_build",
-      "prompt_ru": "Используй $docara. Выполни проверяемый синтетический сценарий docara.documentation_contour_build и верни evidence без внешних или live-записей.",
+      "prompt_ru": "Use $docara. Run the checkable synthetic scenario docara.documentation_contour_build and return evidence without external or live calls.",
       "prompt_en": "Use $docara. Complete the synthetic docara.documentation_contour_build scenario and return evidence without external or live writes.",
       "fixture_repository": "graph/benchmarks/owner-outcomes/fixtures/docara/documentation_contour_build",
       "rubric_ref": "graph/benchmarks/owner-outcomes/rubrics/docara.json"
@@ -59,7 +59,7 @@
     {
       "id": "docara.runtime_reference_diagnosis.outcome",
       "capability_id": "docara.runtime_reference_diagnosis",
-      "prompt_ru": "Используй $docara. Выполни проверяемый синтетический сценарий docara.runtime_reference_diagnosis и верни evidence без внешних или live-записей.",
+      "prompt_ru": "Use $docara. Run the checkable synthetic scenario docara.runtime_reference_diagnosis and return evidence without external or live calls.",
       "prompt_en": "Use $docara. Complete the synthetic docara.runtime_reference_diagnosis scenario and return evidence without external or live writes.",
       "fixture_repository": "graph/benchmarks/owner-outcomes/fixtures/docara/runtime_reference_diagnosis",
       "rubric_ref": "graph/benchmarks/owner-outcomes/rubrics/docara.json"

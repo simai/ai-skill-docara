@@ -1,6 +1,6 @@
 # Developer and AI SDK, preview, test, and QA
 
-> Source: simai/docara (https://github.com/simai/docara): docs/site/content/ru/reference/cli.md, docs/site/content/ru/development/developer-sdk.md, tools/mcp-docara · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): docs/site/content/ru/reference/cli.md, docs/site/content/ru/development/developer-sdk.md, tools/mcp-docara · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -9,6 +9,7 @@
 - [Source-backed documentation tracking](#source-backed-documentation-tracking)
 - [Validation and tests](#validation-and-tests)
 - [Preview](#preview)
+- [Page templates, AGENTS.md and the quality report (3.9)](#page-templates-agentsmd-and-the-quality-report-39)
 - [Structured QA](#structured-qa)
 - [Optional MCP adapter](#optional-mcp-adapter)
 
@@ -138,7 +139,7 @@ php vendor/bin/docara validate source simai-framework:component.buttons --json
 php vendor/bin/docara validate smart project.notice --json
 php vendor/bin/docara validate layout project.docs --json
 php vendor/bin/docara test smart project.notice \
-  --page=/en/project-demos/ --json
+  --page=/ru/project-demos/ --json
 php vendor/bin/docara test layout project.docs \
   --page=/en/project-demos/ --json
 ```
@@ -159,7 +160,7 @@ authoring diagnostics but does not call AI, use the network, or edit sources.
 
 ```bash
 php vendor/bin/docara preview page \
-  --page=/en/project-demos/
+  --page=/ru/project-demos/
 php vendor/bin/docara preview smart \
   --page=/en/project-demos/ --selector=project.notice
 php vendor/bin/docara preview region \
@@ -187,8 +188,9 @@ must not be deployed as a site build.
   `documentation_standard` in `docara capabilities --json` and the read-only
   MCP tool `docara_authoring_standard`. AI contract version 1.2.0.
 - `docara qa report [--env=<env>] [--min-score=N] [--html]` scores a built site
-  0–100 offline: 27 `QUALITY_*` checks in six groups (completeness,
-  freshness, findability, readability, accessibility, links). `quality.min_score`
+  0–100 offline (`--env` defaults to `local`; pass `--env=production` for a
+  production build): 27 `QUALITY_*` checks in six groups (completeness,
+  freshness, findability, readability, accessibility, links). `quality.min_score` in `docara.authoring.json`
   or `--min-score` fails the command below the threshold
   (`QUALITY_SCORE_BELOW_MINIMUM`). `docara build` prints one quality line.
 - `docara qa review-packet [route]` writes the questions only a reader can

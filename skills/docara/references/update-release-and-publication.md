@@ -1,6 +1,6 @@
 # Upgrade, update, release, and publication
 
-> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{update,upgrade-3,publish,hosting,portal}.md · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{update,publish,hosting,portal}.md · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -9,7 +9,6 @@
 - [Rollback](#rollback)
 - [Move a 2.x project to 3.x](#move-a-2x-project-to-3x)
 - [Legacy transition and low-level update](#legacy-transition-and-low-level-update)
-- [Release and skill gate](#release-and-skill-gate)
 - [Static publication](#static-publication)
 - [State boundaries](#state-boundaries)
 
@@ -86,8 +85,9 @@ settings, translations and assets are not rewritten:
 1. Record `git status --short`, commit or save unfinished work, keep the last
    verified `build_production` for rollback.
 2. `composer require simai/docara:^3.0 -W`.
-3. `php vendor/bin/docara update --verify`, `--dry-run`, then `--apply` (with
-   `--adopt` on the dry run when the project has no ownership manifest).
+3. `php vendor/bin/docara update --verify`, `--dry-run`, then `--apply`. A project
+   with no ownership manifest starts with `update --dry-run --adopt`, then
+   `--apply`, then `--verify`.
 4. Read `runtime.pair_id` in `simai-framework.lock.json`. `ui-32c7a64e4575`,
    `ui-25beeb814ae8`, `ui-82fc0ba882ba` and the Docara 2.18 lock
    `ui-4f5e5067afeb-smart-7d932ed51408` build with the bundled release; any
@@ -145,23 +145,6 @@ Its plan may target only `.docara/engine`. `update` without an action runs
 `--verify`. It does not run Composer or change the dependency lock. Unknown files, dirty ownership, conflicts, symlinks or a
 stale plan fail before mutation. Never use `init --update`.
 
-## Release and skill gate
-
-Compare the new public AI contract with the previous release. Internal changes
-may reuse the current skill. A changed command, safety sequence, ownership rule
-or capability requires:
-
-1. an incremented compatible `docara.ai_contract` identity;
-2. synchronized canonical raw skill and skill graph;
-Only then may the Docara package publication gate pass. `docara upgrade` never
-installs or updates this skill; a project command never writes agent settings.
-
-Package preparation remains an exact clean-revision maintainer operation. The
-candidate records source revision, planned version/tag, archive hash, file
-ledger, dependency inventory and `published=false`. Build it independently in
-two clean checkouts and compare byte-exact artifacts. Publication, tag, GitHub
-Release and deploy require their own authorization.
-
 ## Static publication
 
 Build with the correct `base_url`, run `verify-static`, copy only
@@ -182,11 +165,9 @@ Publication surfaces added in 3.x (check the installed schema first):
   Pages automatically.
 - A `portal` section builds one path of a larger portal (needs `site_url`, one
   locale, `default_unprefixed` routing; no `sitemap.xml`, `robots.txt` or
-  `404.html`). `docara portal-artifact` packs it into a reproducible
+  `404.html`). `docara portal-artifact [environment] --release=TAG
+  --repository=OWNER/NAME --commit=SHA` packs it into a reproducible
   `<product>-<version>-portal.tar.gz`, `.sha256` and receipt.
-- Docara's own documentation is published on GitHub Pages
-  (https://simai.github.io/docara/) by the product workflow; that is product
-  release work, not a project task.
 
 ## State boundaries
 
@@ -197,7 +178,6 @@ Report separately:
 - low-level engine update planned/applied/rolled back;
 - site build succeeded and static output verified;
 - browser/QA accepted;
-- release package reproducible and skill gate synchronized;
 - release authorized/published;
 - site staged/deployed/smoke-tested.
 

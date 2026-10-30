@@ -1,6 +1,6 @@
 # Build, preview, and verification
 
-> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{static-output,verify,local-preview}.md · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{php-only,verify,local-preview}.md · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -148,8 +148,8 @@ or repair output. It checks:
 - component catalogue and Markdown ownership;
 - exact Framework and Smart asset projection, shared shell stylesheets and
   the optional theme stylesheet;
-- `sitemap.xml`, `robots.txt` and `llms.txt` when `site_url` is set, and
-  their absence in a portal build;
+- `sitemap.xml`, `robots.txt` and `llms.txt` when `site_url` is set; a portal
+  build keeps `llms.txt` and has no `sitemap.xml` or `robots.txt`;
 - the `404.html` page like any other page;
 - missing, duplicate, symlinked, or hardlinked output.
 

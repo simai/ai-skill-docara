@@ -1,6 +1,6 @@
 # Architecture and project model
 
-> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site, resources/schemas, src · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site, resources/schemas, src · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -27,8 +27,7 @@ the build stops with `COMPOSITION_RECIPE_RUNTIME_REQUIRED`). The published site
 stays static. Optional browser/visual QA may use additional tooling.
 
 The package bundles a pinned public SIMAI Framework release (Core, Smart and
-the Recipe runtime from one `simai/ui` commit): `ui-32c7a64e4575` since 3.6.0,
-`ui-25beeb814ae8` in 3.1.0-3.5.0, `ui-82fc0ba882ba` in 3.0.x. No Framework
+the Recipe runtime from one `simai/ui` commit): `ui-32c7a64e4575` since 3.6.0. No Framework
 checkout is needed; `DOCARA_SIMAI_UI_ROOT` and `SIMAI_UI_ROOT` are only an
 optional way to build with another distribution of the same Recipe
 specification. Always read the exact pair from the project lock and the
@@ -119,10 +118,9 @@ Package-owned or generated surfaces:
 
 - `.docara/engine/**` and its ownership manifest;
 - update plans and rollback packages;
-- `build_*` and the receipts in `build_<environment>.docara/` (3.0.0 kept
-  them inside the output as `build_<environment>/.docara/`);
+- `build_*` and the receipts in `build_<environment>.docara/`;
 - generated `_docara/**` assets, search data, and catalogues.
-- generated `.docara/examples.json` and `.docara/translation-status.json`.
+- generated `build_<environment>.docara/examples.json` and translation status.
 
 Use product commands to update package-owned state. Never fix source behavior
 by editing generated output.
@@ -147,7 +145,7 @@ catalogue with project Smart demos) is `--template=showcase --lang=ru`. The
 template is chosen only at the first `init`.
 
 `init` accepts an empty directory or one containing only that verified
-project-local Composer runtime; `.git/`, `.gitignore`, `.gitattributes` and
+project-local Composer runtime; `.git/`, `.gitignore`, `.gitattributes`, `AGENTS.md` and
 file-manager files (`.DS_Store`, `Thumbs.db`, `desktop.ini`) do not count, so
 `git init` before `init` works. If Composer offers only 2.x, clear its cache
 and remove a stale `repositories` entry (see the product troubleshooting page).

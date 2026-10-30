@@ -1,6 +1,6 @@
 # Security and troubleshooting
 
-> Source: simai/docara (https://github.com/simai/docara): docs/site/content/ru/troubleshooting.md, docs/site/content/ru/reference/errors, docs/site/content/ru/reference/security-and-errors.md · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): docs/site/content/ru/troubleshooting.md, docs/site/content/ru/reference/errors, docs/site/content/ru/reference/security-and-errors.md · Checked: 2026-10-30 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -15,6 +15,8 @@
 ## Fail-closed model
 
 Docara accepts validated IDs and data, not project-supplied executable hooks.
+The one exception is `page_transforms` in `docara.json`: commands the project
+runs over the written site before Docara measures it. Review them like any build script.
 Preserve these boundaries:
 
 - no parent traversal, absolute/output-root escape, or includes outside owned
