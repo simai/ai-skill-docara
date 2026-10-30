@@ -17,3 +17,6 @@ graph/generated/
 
 # Mirai 2 local state: migration backups, staging, runtime
 .mirai/
+
+# Reports of Federation checks stay local
+mirai/graph/generated/

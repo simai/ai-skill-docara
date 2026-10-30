@@ -1,0 +1,18 @@
+{
+  "evidence": [],
+  "from": "capability.docara.existing_site_extension",
+  "id": "relation.capability-docara-existing-site-extension.documented-by.source-docara-architecture-and-project-model-md-c56846a2a33f",
+  "kind": "relation",
+  "profile": "skill_runtime",
+  "readiness": "accepted",
+  "relation_type": "documented_by",
+  "schema_version": "1.0.0",
+  "source": "capability.docara.existing_site_extension",
+  "source_refs": [
+    "skills/docara/quality/capability-map.json"
+  ],
+  "status": "accepted",
+  "target": "source.docara.architecture-and-project-model-md.c56846a2a33f",
+  "to": "source.docara.architecture-and-project-model-md.c56846a2a33f",
+  "type": "documented_by"
+}

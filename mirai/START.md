@@ -5,7 +5,7 @@
 - Kind: `project`
 - Mirai: `>=2.1.0-alpha <3.0.0`
 - Project manifest contract: `1.0.0`
-- Lock digest: `sha256:3cf5b0f261fbcf590234df885b097b033f69806aba7e77f22b53b42ebd89319a`
+- Lock digest: `sha256:3faaef0a3355b8ede1d7fa7686e1e56629d0239e8dadb2d12a746222c599a863`
 - Profiles: `skill_runtime`
 
 ## Boundaries
@@ -23,8 +23,8 @@ Mirai uses Hybrid SOT. Generated context and evidence do not authorize canonical
 - `mirai/graph/specs/objects/capability-docara-security-troubleshooting.json`
 - `mirai/graph/specs/objects/capability-docara-settings-inheritance.json`
 - `mirai/graph/specs/objects/capability-docara-update-release-publication.json`
-- `mirai/graph/specs/objects/capability-map-capability-docara-documentation-contour-build.json`
-- `mirai/graph/specs/objects/capability-map-capability-docara-existing-contour.json`
+- `mirai/graph/specs/objects/capability-map-capability-docara-documentation-site-build.json`
+- `mirai/graph/specs/objects/capability-map-capability-docara-existing-site-extension.json`
 - `mirai/graph/specs/objects/capability-map-capability-docara-runtime-reference-diagnosis.json`
 - `mirai/graph/specs/objects/capability-map-capability-docara-source-backed-documentation-tracking.json`
 - `mirai/graph/specs/objects/capability-map-constraint-docara-capability-map-boundary.json`
@@ -39,13 +39,13 @@ Mirai uses Hybrid SOT. Generated context and evidence do not authorize canonical
 - `mirai/graph/specs/objects/skill-docara-core.json`
 - `mirai/graph/specs/project-continuity.json`
 - `mirai/graph/ordering/objects.json`
-- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json`
-- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json`
-- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-governed-by-constraint-docara-capability-map-boundary.json`
-- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-contour-build-validated-by-gate-docara-capability-map-conformance.json`
-- `mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-contour-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json`
-- `mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-contour-governed-by-constraint-docara-capability-map-boundary.json`
-- `mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-contour-validated-by-gate-docara-capability-map-conformance.json`
+- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-site-build-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json`
+- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-site-build-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json`
+- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-site-build-governed-by-constraint-docara-capability-map-boundary.json`
+- `mirai/graph/specs/relations/capability-map-relation-capability-docara-documentation-site-build-validated-by-gate-docara-capability-map-conformance.json`
+- `mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-site-extension-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json`
+- `mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-site-extension-governed-by-constraint-docara-capability-map-boundary.json`
+- `mirai/graph/specs/relations/capability-map-relation-capability-docara-existing-site-extension-validated-by-gate-docara-capability-map-conformance.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-documented-by-source-docara-architecture-and-project-model-md-c56846a2a33f.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-documented-by-source-docara-build-preview-and-verification-md-f26452b7ea3b.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-runtime-reference-diagnosis-governed-by-constraint-docara-capability-map-boundary.json`
@@ -54,8 +54,8 @@ Mirai uses Hybrid SOT. Generated context and evidence do not authorize canonical
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-documented-by-source-docara-developer-sdk-and-qa-md-fb236802201d.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-governed-by-constraint-docara-capability-map-boundary.json`
 - `mirai/graph/specs/relations/capability-map-relation-capability-docara-source-backed-documentation-tracking-validated-by-gate-docara-capability-map-conformance.json`
-- `mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-documentation-contour-build.json`
-- `mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-existing-contour.json`
+- `mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-documentation-site-build.json`
+- `mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-existing-site-extension.json`
 - `mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-runtime-reference-diagnosis.json`
 - `mirai/graph/specs/relations/capability-map-relation-skill-docara-core-contains-capability-docara-source-backed-documentation-tracking.json`
 - `mirai/graph/specs/relations/relation-gate-docara-acceptance-validates-capability-docara-build-preview-verification.json`

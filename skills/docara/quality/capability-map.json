@@ -5,12 +5,12 @@
   "readiness": "ready",
   "capabilities": [
     {
-      "id": "docara.documentation_contour_build",
+      "id": "docara.documentation_site_build",
       "aliases": [
         "Docara build",
         "documentation site"
       ],
-      "user_outcome": "Build a Docara documentation contour from canonical project sources without duplicating the source of truth.",
+      "user_outcome": "Build a Docara documentation site from canonical project sources without duplicating the source of truth.",
       "readiness": "ready",
       "canonical_source_refs": [
         "references/architecture-and-project-model.md",
@@ -18,7 +18,7 @@
       ],
       "extension_points": [
         {
-          "id": "docara.documentation_contour_build.extension",
+          "id": "docara.documentation_site_build.extension",
           "kind": "extend",
           "source_ref": "references/architecture-and-project-model.md",
           "validator_ref": "federation://owner-capability-map"
@@ -43,14 +43,14 @@
         "intent_signals": [
           "Docara build",
           "documentation site",
-          "docara.documentation_contour_build",
-          "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
+          "docara.documentation_site_build",
+          "Build a Docara documentation site from canonical project sources without duplicating the source of truth."
         ],
         "requirement_signals": [
           "Docara build",
           "documentation site",
-          "docara.documentation_contour_build",
-          "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
+          "docara.documentation_site_build",
+          "Build a Docara documentation site from canonical project sources without duplicating the source of truth."
         ],
         "project_signals": [
           "docara"
@@ -65,7 +65,7 @@
       },
       "coverage": {
         "provides": [
-          "Build a Docara documentation contour from canonical project sources without duplicating the source of truth."
+          "Build a Docara documentation site from canonical project sources without duplicating the source of truth."
         ],
         "does_not_provide": [
           "Capabilities outside the declared owner boundary"
@@ -88,10 +88,10 @@
       ]
     },
     {
-      "id": "docara.existing_contour",
+      "id": "docara.existing_site_extension",
       "aliases": [
-        "Docara contour",
-        "docara contour",
+        "Docara documentation site",
+        "docara documentation site",
         "documentation site"
       ],
       "user_outcome": "Extend an existing documentation site",
@@ -101,7 +101,7 @@
       ],
       "extension_points": [
         {
-          "id": "docara.existing_contour.extension",
+          "id": "docara.existing_site_extension.extension",
           "kind": "extend",
           "source_ref": "references/architecture-and-project-model.md",
           "validator_ref": "federation://technology-conformance"
@@ -122,17 +122,17 @@
       ],
       "discovery": {
         "intent_signals": [
-          "Docara contour",
-          "docara contour",
+          "Docara documentation site",
+          "docara documentation site",
           "documentation site",
-          "docara.existing_contour",
+          "docara.existing_site_extension",
           "Extend an existing documentation site"
         ],
         "requirement_signals": [
-          "Docara contour",
-          "docara contour",
+          "Docara documentation site",
+          "docara documentation site",
           "documentation site",
-          "docara.existing_contour",
+          "docara.existing_site_extension",
           "Extend an existing documentation site"
         ],
         "project_signals": [
@@ -329,7 +329,7 @@
       "composition": {
         "requires": [],
         "compatible_with": [
-          "docara.documentation_contour_build"
+          "docara.documentation_site_build"
         ],
         "conflicts_with": []
       },

@@ -185,7 +185,7 @@ pause/play labels); every built-in interface string can be overridden in
 
 ## Documentation source tracking
 
-`documentation_tracking` is a separate optional contour for the base locale.
+`documentation_tracking` is a separate optional setting for the base locale.
 It compares Markdown and reusable Example IDs with a project-owned public API
 contract. It does not translate pages, duplicate a component registry or infer
 relations from similar prose.
@@ -231,7 +231,7 @@ HTML rather than editing redirect output.
 1. Map the requested public URL to its physical Markdown owner.
 2. Read inherited settings and related locale routes.
 3. Read translation and documentation-source reports when their independent
-   tracking contours are enabled.
+   tracking are enabled.
 4. Inspect exact source entities before editing API reference pages/examples.
 5. Edit prose and the narrowest required metadata/config owner.
 6. Validate local links, component syntax, assets, examples, source relations,
