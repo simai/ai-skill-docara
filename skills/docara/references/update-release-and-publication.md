@@ -1,6 +1,6 @@
 # Upgrade, update, release, and publication
 
-> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{update,upgrade-3,publish,hosting,portal}.md · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{update,upgrade-3,publish,hosting,portal}.md · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -153,13 +153,14 @@ or capability requires:
 
 1. an incremented compatible `docara.ai_contract` identity;
 2. synchronized canonical raw skill and skill graph;
+<!-- federation:begin -->
 3. `skill-change-detect`, `skill-graph-sync`, Federation verify and route check;
 4. an exact canonical skill commit pinned by the Federation stable release
    lock.
 
-Only then may the Docara package publication gate pass. Federation, not
-`docara upgrade`, physically installs that exact skill revision during its own
-atomic update. A project command never writes `~/.codex`.
+<!-- federation:end -->
+Only then may the Docara package publication gate pass. `docara upgrade` never
+installs or updates this skill; a project command never writes agent settings.
 
 Package preparation remains an exact clean-revision maintainer operation. The
 candidate records source revision, planned version/tag, archive hash, file
@@ -172,8 +173,8 @@ Release and deploy require their own authorization.
 Build with the correct `base_url`, run `verify-static`, copy only
 `build_<environment>/` (never `build_<environment>.docara/`) to versioned
 staging, compare digests, smoke routes/assets/search/themes, then switch
-traffic atomically. Use `$ops` for hosting, access, backup, rollback and live
-changes. Build success is not deployment authorization.
+traffic atomically. Hosting, access, backup, rollback and live changes belong to
+whoever operates the site. Build success is not deployment authorization.
 
 Publication surfaces added in 3.x (check the installed schema first):
 
@@ -191,7 +192,7 @@ Publication surfaces added in 3.x (check the installed schema first):
   `<product>-<version>-portal.tar.gz`, `.sha256` and receipt.
 - Docara's own documentation is published on GitHub Pages
   (https://simai.github.io/docara/) by the product workflow; that is product
-  release work for `$dev`, not a project task.
+  release work, not a project task.
 
 ## State boundaries
 

@@ -1,6 +1,6 @@
 # Security and troubleshooting
 
-> Источник: simai/docara (https://github.com/simai/docara): docs/site/content/ru/troubleshooting.md, docs/site/content/ru/reference/errors, docs/site/content/ru/reference/security-and-errors.md · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): docs/site/content/ru/troubleshooting.md, docs/site/content/ru/reference/errors, docs/site/content/ru/reference/security-and-errors.md · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 

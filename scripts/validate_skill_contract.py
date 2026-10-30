@@ -55,8 +55,8 @@ def main() -> int:
         blockers.append("SKILL.md has no valid front matter")
     else:
         keys = [line.split(":", 1)[0] for line in match.group(1).splitlines() if ":" in line]
-        if keys != ["name", "description"]:
-            blockers.append(f"SKILL.md front matter keys must be name, description; got {keys}")
+        if keys[:2] != ["name", "description"] or "license" not in keys:
+            blockers.append(f"SKILL.md front matter needs name, description and license; got {keys}")
     if "name: docara" not in text:
         blockers.append("SKILL.md name is not docara")
     if "capabilities --json" not in text:

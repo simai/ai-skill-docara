@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.0 - 2026-10-30
+
+- Open skill: Agent Skills format with `license` and `compatibility`, English
+  throughout, Apache-2.0, works without SIMAI Federation; Federation-only text
+  is marked `federation:begin`/`federation:end`.
+
 ## 0.5.0 - 2026-10-23
 
 - Moved the skill from Docara 2 to Docara 3 (checked against `v3.8.0`):

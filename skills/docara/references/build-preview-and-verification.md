@@ -1,6 +1,6 @@
 # Build, preview, and verification
 
-> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{static-output,verify,local-preview}.md · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/build/{static-output,verify,local-preview}.md · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 

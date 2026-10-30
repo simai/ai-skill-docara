@@ -1,6 +1,6 @@
 # Content, locales, and navigation
 
-> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/authoring (markdown, localization, multilingual-site, search, redirects) · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/authoring (markdown, localization, multilingual-site, search, redirects) · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -74,7 +74,7 @@ false` switches inference off; explicit profiles always win.
 
 Front matter `tags` feed search: a tag match ranks below a title match and
 above heading and body matches. A tag may be lowercase letters of any
-script, digits, `.`, `_` and `-` (`tags: [деплой, i18n]`); uppercase and
+script, digits, `.`, `_` and `-` (`tags: [déploiement, i18n]`); uppercase and
 spaces fail with `FRONT_MATTER_TAG_INVALID`.
 
 ## Authoring rules
@@ -241,6 +241,6 @@ HTML rather than editing redirect output.
    and inspect representative desktop/mobile, theme, locale, navigation,
    search, and fragment scenarios.
 
-Use `$docs` for documentation method and information architecture, `$content`
-for substantial editorial/localization work, `$marketing` for public search
-contracts, and `$tester` for acceptance evidence.
+Documentation method and information architecture, substantial editorial or
+localization work, public search contracts and acceptance evidence each deserve
+their own owner when the project has one.

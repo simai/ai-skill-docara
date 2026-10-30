@@ -1,6 +1,6 @@
 # Developer and AI SDK, preview, test, and QA
 
-> Источник: simai/docara (https://github.com/simai/docara): docs/site/content/ru/reference/cli.md, docs/site/content/ru/development/developer-sdk.md, tools/mcp-docara · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): docs/site/content/ru/reference/cli.md, docs/site/content/ru/development/developer-sdk.md, tools/mcp-docara · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -224,7 +224,7 @@ and candidate bytes and checks the full manifest seal. Do not accept a reported
 zero-pixel diff without complete identity, screenshot, accessibility, console,
 overflow, and scenario evidence.
 
-Use `$tester` for the acceptance verdict and browser matrix.
+The acceptance verdict and browser matrix belong to whoever tests the project.
 
 ## Optional MCP adapter
 

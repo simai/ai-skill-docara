@@ -1,6 +1,6 @@
 # Components, Smart artifacts, and design composition
 
-> Источник: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/components, docs/site/content/ru/build/upgrade-3.md, resources/framework · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): CHANGELOG.md, docs/site/content/ru/components, docs/site/content/ru/build/upgrade-3.md, resources/framework · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 ## Contents
 
@@ -231,6 +231,6 @@ Fail closed on:
   pinned `effects.catalogue`.
 
 Changing an engine-owned typed definition, bundled registry, Framework
-admission, or product schema is Docara engine development. Route that work to
-`$dev`, preserve exact-lock evidence, add positive/negative tests and one
+admission, or product schema is Docara engine development. Do that work in the
+Docara repository, preserve exact-lock evidence, add positive/negative tests and one
 physical Markdown owner, then run full static and browser acceptance.

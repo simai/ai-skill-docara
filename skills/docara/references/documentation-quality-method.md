@@ -1,6 +1,6 @@
 # Documentation quality method
 
-> Источник: simai/docara (https://github.com/simai/docara): docs/site, docs/quality · Проверено: 2026-10-28 · Версия: 3.9.1 (тег v3.9.1, 521b035f)
+> Source: simai/docara (https://github.com/simai/docara): docs/site, docs/quality · Checked: 2026-10-28 · Version: 3.9.1 (tag v3.9.1, 521b035f)
 
 How to plan, write, audit and accept documentation built with Docara so that it
 meets the standard of the best public documentation (MDN, Stripe, Tailwind,
@@ -44,8 +44,8 @@ Rules:
 
 - Do not mix kinds on one page. A how-to links to the reference for fields;
   a reference page does not teach.
-- The navigation shows the kinds: a «Начало работы» path of tutorials, guide
-  sections of how-to and explanation pages, a «Справочник» of reference pages.
+- The navigation shows the kinds: a "Getting started" path of tutorials, guide
+  sections of how-to and explanation pages, a "Reference" group of reference pages.
   In Docara, group sections under header items with
   `header_navigation.items[].sections` and keep the sidebar to one section
   (`navigation.scope` defaults to `section` when a header menu exists).
@@ -64,20 +64,20 @@ Rules:
 - The first example comes right after the introduction (a live `:::example`
   for components, a command block for tasks).
 - Fixed H2 order per page type (below); detail goes into H3.
-- `## См. также` last, with links to the neighbouring kinds (the how-to links
+- `## See also` last, with links to the neighbouring kinds (the how-to links
   the reference, the reference links the how-to).
 
 ### Component page (Docara typed components, project components)
 
-1. `## Пример` — the component in its most common form, live.
-2. `## Разметка` — the minimal correct Markdown and the required parts.
-3. `## Варианты` — one H3 per parameter axis (`layout`, `variant`, `type`,
+1. `## Example` — the component in its most common form, live.
+2. `## Markup` — the minimal correct Markdown and the required parts.
+3. `## Variants` — one H3 per parameter axis (`layout`, `variant`, `type`,
    `size` …); each H3 shows every value side by side in one live example.
-4. `## Состояния` — one H3 per state (open, disabled, loading, error …).
-5. `## Доступность` — names, focus, keys, what a screen reader announces.
-6. `## Параметры` — generated from the component catalogue: name, type,
+4. `## States` — one H3 per state (open, disabled, loading, error …).
+5. `## Accessibility` — names, focus, keys, what a screen reader announces.
+6. `## Parameters` — generated from the component catalogue: name, type,
    default, allowed values, deprecated names.
-7. `## См. также`.
+7. `## See also`.
 
 An axis is shown by values, not by prose. Every example whose layout depends
 on the window can be opened in the device-width viewer (Docara offers it on
@@ -85,9 +85,9 @@ inline Markdown examples and sandboxed examples).
 
 ### How-to page
 
-Goal (one sentence) → «Что понадобится» → numbered steps with copyable
-commands → «Как проверить» (an observable result) → «Если не получилось»
-(symptom → cause → fix, linking error codes) → «См. также».
+Goal (one sentence) → "What you need" → numbered steps with copyable
+commands → "How to check" (an observable result) → "If it did not work"
+(symptom → cause → fix, linking error codes) → "See also".
 
 ### Reference page
 
@@ -104,10 +104,10 @@ how-to and reference that act on it. Diagrams for flows and layers.
 ## 4. Language
 
 - Russian site copy: plain words, present tense, active voice, the reader as
-  «вы». One idea per sentence; sentences under ~25 words (Docara's quality
+  "you". One idea per sentence; sentences under ~25 words (Docara's quality
   report flags longer ones).
-- No history or plans in pages: no «раньше», «теперь», «в новой версии»,
-  «будет», «появится», no versions in prose. History goes to the changelog,
+- No history or plans in pages: no "previously", "now", "in the new version",
+  "will", "coming soon", no versions in prose. History goes to the changelog,
   plans to the roadmap.
 - One term per thing, the same everywhere; English identifiers stay in code
   spans. Keep a glossary of the product's terms.
@@ -127,7 +127,7 @@ Before writing or auditing, build the map and keep it with the project:
 2. List the topics a reader meets, grouped by area (getting started, writing,
    components, settings, build and publish, extend, troubleshoot, AI).
 3. For every topic fill four cells — tutorial, how-to, reference,
-   explanation — with `есть` (where), `частично` (what is missing) or `нет`.
+   explanation — with `yes` (where), `partly` (what is missing) or `no`.
 4. Reconcile reference against the release in both directions: shipped
    without a page, and pages describing what does not ship (stale).
 5. Score every area 0–10 with one line of justification, and rank the ten
@@ -136,9 +136,9 @@ Before writing or auditing, build the map and keep it with the project:
 ## 6. Benchmark criteria
 
 Score the site against the criteria the best documentation meets. Each is
-`есть`, `частично` or `нет`, with evidence.
+`yes`, `partly` or `no`, with evidence.
 
-| Criterion | What «есть» means |
+| Criterion | What `yes` means |
 | --- | --- |
 | First success under 15 minutes | Own quick-start page, real versions, visible result, checks after steps |
 | Search | Full-text search over every page, synonyms for product terms |

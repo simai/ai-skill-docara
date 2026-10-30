@@ -4,7 +4,10 @@
       "docara",
       "документационный сайт",
       "front matter",
-      "меню"
+      "меню",
+      "сайт документации",
+      "лендинг на docara",
+      "статическая сборка docara"
     ],
     "companion_skills": [
       "docs"
@@ -18,7 +21,10 @@
       "docara",
       "документационный сайт",
       "front matter",
-      "меню"
+      "меню",
+      "сайт документации",
+      "лендинг на docara",
+      "статическая сборка docara"
     ],
     "owner_boundary": "docara owns its domain methodology and judgement; federation graph owns routing/contracts/readiness/evidence only.",
     "raw_fallback_required": true,
@@ -30,7 +36,10 @@
       "docara",
       "документационный сайт",
       "front matter",
-      "меню"
+      "меню",
+      "сайт документации",
+      "лендинг на docara",
+      "статическая сборка docara"
     ]
   },
   "schema": "simai.skill_routing.v1",

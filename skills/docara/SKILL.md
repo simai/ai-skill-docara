@@ -1,6 +1,8 @@
 ---
 name: docara
-description: "Docara 3: отдельный сайт документации и лендинг. docara.json, Markdown-контент, навигация, локали, layouts, компоненты, примеры, Developer/AI SDK, статическая сборка, обновление и переход с 2.x, откат, публикация."
+description: "Builds and evolves standalone Docara 3 documentation sites and landing pages: docara.json, Markdown content, navigation, locales, layouts, components, examples, Developer/AI SDK, static builds, upgrades and migration from 2.x, rollback, publication. Use when a project contains docara.json or the user mentions Docara."
+license: Apache-2.0
+compatibility: "Needs PHP 8.2+, Composer and Node.js 20+ on the build machine."
 ---
 
 # Docara
@@ -27,11 +29,12 @@ When a command, schema field, component, or artifact contract may have changed,
 inspect the exact installed package instead of guessing. If product sources and
 this skill disagree, follow the product and report skill drift.
 
-When this skill is updated, compare the `Версия:` header of every reference
+When this skill is updated, compare the `Version:` header of every reference
 with the latest `simai/docara` release tag and its `CHANGELOG.md`; a newer
 minor or major release means the references must be re-checked before they are
 re-stamped.
 
+<!-- federation:begin -->
 Use the repo-local Mirai Graph only to select capabilities, relations, gates,
 and references. Raw skill sources remain authoritative for method and
 judgement. Graph output never grants write, release, or deployment authority.
@@ -47,6 +50,7 @@ fails closed.
 
 Executable technology: [documentation-site-lifecycle.json](./technologies/documentation-site-lifecycle.json)
 (scenarios: project change, engine upgrade, static publication).
+<!-- federation:end -->
 
 ## Start every task
 
@@ -78,8 +82,10 @@ Executable technology: [documentation-site-lifecycle.json](./technologies/docume
 | Diagnose errors, ownership, paths, locks, links, assets, or security boundaries | [security-and-troubleshooting.md](./references/security-and-troubleshooting.md) |
 | Plan, write, restructure, audit, or accept a documentation set to the standard of the best public docs (Diátaxis map, page standards, benchmark, docs-only trial) | [documentation-quality-method.md](./references/documentation-quality-method.md) |
 
+<!-- federation:begin -->
 Read [rules/skill-mesh-balance.md](./rules/skill-mesh-balance.md) when the task
 needs documentation, content, SEO, UX, QA, runtime, or release companions.
+<!-- federation:end -->
 
 ## Core execution loop
 
@@ -153,21 +159,24 @@ php vendor/bin/docara serve production \
 - Keep secrets and private content out of source and static output.
 - Treat `build`, `verify-static`, browser acceptance, release readiness,
   package publication, and deployment as separate states.
-- Require `$ops`, backup, rollback, and an explicit live authorization before
+- Require the site operator, backup, rollback, and an explicit live authorization before
   deployment or destructive runtime work.
 
-## Чем навык не занимается
+## What this skill does not do
 
-- Метод документации, аудитории, карта и редактура текстов — `docs`; большие
-  объёмы текста и локализация — `content`.
-- Решения о поисковой видимости — `marketing`; сценарии читателя и интерфейс — `ux`;
-  вердикт о готовности — `tester`.
-- Хостинг, доступы, бэкап и выкладка на живой сервер — `ops`.
-- Код движка Docara (`src/`, схемы пакета, встроенные реестры, тесты
-  продукта) — `dev` в репозитории продукта; навык даёт знание о продукте, а не
-  владеет репозиторием.
-- Сам SIMAI Framework и его компоненты — `framework`; структура графа —
-  `graph`; упорядочивание данных навыка — `mirai`.
+- Long editorial work, translation at scale and decisions about search
+  visibility or reader experience.
+- The verdict that a site is ready to ship.
+- Hosting, access, backup and deployment to a live server.
+- Docara engine code (`src/`, package schemas, bundled registries, product
+  tests): this skill knows the product, it does not own that repository.
+- SIMAI Framework itself and its components.
+
+<!-- federation:begin -->
+In the Federation these belong to: `docs`, `content`, `marketing`, `ux`, `tester`,
+`ops`, `dev` in the product repository, `framework`; graph structure to `graph`
+and ordering skill data to `mirai`.
+<!-- federation:end -->
 
 ## Output contract
 
