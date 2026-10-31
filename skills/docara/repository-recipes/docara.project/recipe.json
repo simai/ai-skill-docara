@@ -23,8 +23,6 @@
       "client.project",
       "bitrix.module",
       "bitrix.client_project",
-      "larena.application",
-      "larena.package",
       "sf4.project",
       "framework.project",
       "orgportal.solution"

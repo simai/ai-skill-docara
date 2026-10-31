@@ -123,6 +123,10 @@ Put public shell/interface strings in:
 content/<locale>/lang.json
 ```
 
+A locale added to a project needs this file: without it the build stops with
+`MESSAGE_NOT_FOUND` even when `fallbacks` lists another locale. Copy
+`content/<base>/lang.json` from the base locale and translate the values.
+
 Keep article prose in Markdown and component contract data in manifests. Do not
 move public prose into package config or design definitions.
 

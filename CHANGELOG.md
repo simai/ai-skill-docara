@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0 - 2026-10-31
+
+- Added `references/markdown-blocks.md`, the syntax of every Markdown block at
+  3.9.1; removed Larena names from the public recipe; documented what `validate`
+  misses, `header_navigation`, `translation_tracking`, what a new locale needs and
+  routes without a locale prefix. Fixed a broken anchor and stale README text.
+
+
 ## 0.7.0 - 2026-10-30
 
 - Revision against Docara v3.9.1: post-3.9.1 parameters and code options are marked

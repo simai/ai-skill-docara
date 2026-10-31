@@ -39,7 +39,8 @@ Inside SIMAI Federation, also read [rules/federation.md](./rules/federation.md).
 ## Start every task
 
 1. Locate the project root containing `docara.json`.
-2. Inspect Git status and preserve unrelated or untracked work.
+2. If the project is a Git repository, inspect its status and preserve unrelated
+   or untracked work; a new folder has no repository until `git init`.
 3. Read `docara.json`, declared locale roots, the nearest relevant
    `section.json`, an optional page sidecar, and the Framework lock reference.
 4. Discover the executable from the project (`vendor/bin/docara`) or an exact
@@ -59,6 +60,7 @@ Inside SIMAI Federation, also read [rules/federation.md](./rules/federation.md).
 | Create, adopt, or understand a project | [architecture-and-project-model.md](./references/architecture-and-project-model.md) |
 | Change site, section, page, branding, layout, reading, search, or locale settings | [settings-and-inheritance.md](./references/settings-and-inheritance.md) |
 | Write, restructure, translate, migrate, or track content; change routes or navigation | [content-locales-and-navigation.md](./references/content-locales-and-navigation.md) |
+| Write a page: syntax of every Markdown block (`:::alert`, `:::tabs`, `:::hero`, `:badge` and others) | [markdown-blocks.md](./references/markdown-blocks.md) |
 | Use inline or reusable examples; native, typed, container, Framework, Docara, or project Smart components | [components-smart-and-design.md](./references/components-smart-and-design.md) |
 | Build one page or the full site, preview, serve, or verify output | [build-preview-and-verification.md](./references/build-preview-and-verification.md) |
 | Inspect registries, scaffold artifacts, validate, test, run QA, or use MCP | [developer-sdk-and-qa.md](./references/developer-sdk-and-qa.md) |

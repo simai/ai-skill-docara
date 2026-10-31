@@ -8,7 +8,7 @@
 - [Project-local upgrade](#project-local-upgrade)
 - [Rollback](#rollback)
 - [Move a 2.x project to 3.x](#move-a-2x-project-to-3x)
-- [Legacy transition and low-level update](#legacy-transition-and-low-level-update)
+- [Pre-manifest transition and low-level update](#pre-manifest-transition-and-low-level-update)
 - [Static publication](#static-publication)
 - [State boundaries](#state-boundaries)
 

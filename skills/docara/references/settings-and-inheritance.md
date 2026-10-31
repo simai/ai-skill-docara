@@ -71,6 +71,14 @@ Use for project-wide identity and topology:
   `portal`, `translation_tracking`, `documentation_tracking`, and
   `branding.credit` (`BRANDING_CREDIT_SITE_ONLY` at other levels).
 
+`header_navigation` is `{"enabled": true, "items": [...]}` with one to eight items
+of `id` (`^[a-z][a-z0-9_.-]{0,63}$`), `label` (up to 80 characters) and `href` (`#anchor`,
+`/path` or `https://`); `{"$reset": true}` clears the inherited value.
+
+`translation_tracking` in `docara.json` is `{"enabled": true, "source_locale": "en",
+"mode": "report", "lock_file": "translations.lock.json"}`; `mode` is `report` or
+`publish-current`, and all four fields are required.
+
 `page_transforms` (site scope, up to eight) lists commands run over the written
 site before Docara measures it; each gets the site's directory as its last argument.
 

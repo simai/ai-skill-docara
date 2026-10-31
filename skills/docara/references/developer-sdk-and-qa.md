@@ -31,8 +31,8 @@ php vendor/bin/docara list source --json
 php vendor/bin/docara list layout --json
 php vendor/bin/docara inspect smart ui.alert --json
 php vendor/bin/docara inspect layout docara.docs --json
-php vendor/bin/docara inspect page /en/guide/ --json
-php vendor/bin/docara inspect source simai-framework:component.buttons --json
+php vendor/bin/docara inspect page /en/guide/ --json   # route as built: /guide/ when the default locale has no prefix
+php vendor/bin/docara inspect source <source>:<key> --json   # only for a source that `list source` shows
 php vendor/bin/docara schema smart --json
 php vendor/bin/docara schema authoring --json
 php vendor/bin/docara schema documentation-source --json
@@ -102,8 +102,8 @@ machine-readable work queue for the configured base locale:
 ```bash
 php vendor/bin/docara documentation status --json
 php vendor/bin/docara documentation status \
-  --source=simai-framework --kind=component --status=changed --json
-php vendor/bin/docara validate source simai-framework:component.buttons --json
+  --source=<source> --kind=component --status=changed --json
+php vendor/bin/docara validate source <source>:<key> --json
 ```
 
 Statuses are `current`, `new`, `changed`, `missing`, `missing_example`,
@@ -118,7 +118,7 @@ unambiguous relation:
 
 ```bash
 php vendor/bin/docara documentation accept \
-  --source=simai-framework --key=component.buttons \
+  --source=<source> --key=<key> \
   --route=/ru/components/buttons/ \
   --example=default=components/buttons/basic \
   --review=ai_verified --dry-run --json
@@ -135,7 +135,7 @@ explicit human editorial review. Translation tracking remains independent.
 ```bash
 php vendor/bin/docara validate project --json
 php vendor/bin/docara validate page /en/guide/ --json
-php vendor/bin/docara validate source simai-framework:component.buttons --json
+php vendor/bin/docara validate source <source>:<key> --json
 php vendor/bin/docara validate smart project.notice --json
 php vendor/bin/docara validate layout project.docs --json
 php vendor/bin/docara test smart project.notice \
@@ -150,6 +150,10 @@ page.
 
 Tests are focused artifact evidence. Complete build, static verification, and
 browser acceptance remain separate when the change affects a real site.
+
+`validate` does not catch everything: it reports absolute dead links, but relative
+links and invalid component props surface only in `build` and `verify-static`, so
+run those too before calling a page correct.
 
 Page profile gaps and semantic checklist items are report-only. Invalid
 Markdown, unsafe paths, missing assets/examples, broken technical links, or an

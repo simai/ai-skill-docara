@@ -32,8 +32,7 @@ The compact capability graph is [mirai/graph/specs/index.json](mirai/graph/specs
 The Docara product and the target project's exact installed package remain the
 source of truth for schemas and executable behavior.
 
-The skill supports `docara.ai_contract >=1.0.0 <2.0.0`; Docara 3.8.0 still
-ships AI contract 1.1.1 in that range. It reads the exact project-local `capabilities --json` result and
+The skill supports `docara.ai_contract >=1.0.0 <2.0.0`. It reads the exact project-local `capabilities --json` result and
 does not copy a product-version command or schema catalogue. Older packages
 without that command use their exact package documentation as a compatibility
 fallback.

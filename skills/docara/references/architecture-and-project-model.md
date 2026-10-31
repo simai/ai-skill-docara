@@ -147,13 +147,14 @@ template is chosen only at the first `init`.
 `init` accepts an empty directory or one containing only that verified
 project-local Composer runtime; `.git/`, `.gitignore`, `.gitattributes`, `AGENTS.md` and
 file-manager files (`.DS_Store`, `Thumbs.db`, `desktop.ini`) do not count, so
-`git init` before `init` works. If Composer offers only 2.x, clear its cache
+`git init` before `init` works. Anything else in the folder, such as `.claude/`, makes
+`init` refuse: run it first, or in a new folder. If Composer offers only 2.x, clear its cache
 and remove a stale `repositories` entry (see the product troubleshooting page).
 `init --update` is disabled.
 
 Commit everything `init` created, including `.docara/engine/` and
 `contracts/generated/`; ignore `/vendor/`, `/build_*/` (this also covers
-`build_*.docara/`), `/.docara-preview/` and `/.docara-qa/`. Updating an
+`build_*.docara/`), `/.docara-preview/`, `/.docara-qa/` and `/.docara/upgrades/`. Updating an
 existing project uses the transactional `upgrade` workflow described in
 [update-release-and-publication.md](./update-release-and-publication.md).
 

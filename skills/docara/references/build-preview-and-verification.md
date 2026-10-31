@@ -59,7 +59,7 @@ change.
 ## Single-page build
 
 ```bash
-php vendor/bin/docara build production --page=/en/guides/install/
+php vendor/bin/docara build production --page=/en/guides/install/   # /guides/install/ when the default locale has no prefix
 ```
 
 Use only when:

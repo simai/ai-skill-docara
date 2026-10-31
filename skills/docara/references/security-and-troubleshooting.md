@@ -49,8 +49,8 @@ authoritative owner.
 8. Serve the verified bytes over HTTP when the failure affects visible/runtime
    behavior.
 
-Prefer `--json` for automation and evidence. Human and JSON diagnostics should
-project the same operation result.
+Prefer `--json` for automation and evidence where the command offers it (`build`
+does not). Human and JSON diagnostics project the same operation result.
 
 ## Common failure classes
 
